@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
+/* ─── Brand tokens ──────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-purple:  #652afb;
+  --brand-purple-dark: #4d1fc4;
+  --brand-teal:    #0acdad;
+  --brand-teal-dark: #089e86;
+  --brand-dark:    #19242f;
+  --brand-darker:  #111820;
+  --brand-yellow:  #ffb300;
+  --brand-yellow-dark: #d99700;
 }
 
+/* ─── Tailwind v4 theme extension ───────────────────────────── */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-brand-purple:      #652afb;
+  --color-brand-purple-dark: #4d1fc4;
+  --color-brand-teal:        #0acdad;
+  --color-brand-teal-dark:   #089e86;
+  --color-brand-dark:        #19242f;
+  --color-brand-darker:      #111820;
+  --color-brand-yellow:      #ffb300;
+  --color-brand-yellow-dark: #d99700;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ──────────────────────────────────────────────────── */
+:root {
+  --background: var(--brand-dark);
+  --foreground: #e8edf2;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--brand-darker); }
+::-webkit-scrollbar-thumb {
+  background: var(--brand-purple);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--brand-teal); }
+
+/* ─── Glitch text effect ────────────────────────────────────── */
+.glitch {
+  position: relative;
+  color: #fff;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.glitch::before {
+  color: var(--brand-teal);
+  text-shadow: 4px 0 var(--brand-teal);
+  animation: glitch-1 3s infinite linear alternate-reverse;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  opacity: 0.8;
+}
+.glitch::after {
+  color: var(--brand-purple);
+  text-shadow: -4px 0 var(--brand-purple);
+  animation: glitch-2 2s infinite linear alternate-reverse;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  opacity: 0.8;
+}
+
+@keyframes glitch-1 {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-3px); }
+  40%  { transform: translateX(3px); }
+  60%  { transform: translateX(-2px); }
+  80%  { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+@keyframes glitch-2 {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(3px); }
+  50%  { transform: translateX(-3px); }
+  75%  { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+/* ─── WhatsApp pulse ────────────────────────────────────────── */
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50%       { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+}
+.whatsapp-pulse {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+/* ─── Section divider ───────────────────────────────────────── */
+.section-divider {
+  background: linear-gradient(90deg, transparent, var(--brand-purple), var(--brand-teal), transparent);
+  height: 1px;
+  width: 100%;
+  opacity: 0.3;
 }

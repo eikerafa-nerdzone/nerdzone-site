@@ -201,7 +201,7 @@ export function Footer() {
                   className="flex items-center gap-3 text-gray-400 hover:text-brand-teal transition-colors text-sm"
                 >
                   <span className="w-2 h-2 rounded-full bg-brand-teal flex-shrink-0" />
-                  WhatsApp: +55 11 99608-2749
+                  WhatsApp: +55 11 93911-7113
                 </a>
               </div>
 

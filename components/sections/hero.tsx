@@ -112,8 +112,10 @@ export function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
+          whileHover={{ filter: "drop-shadow(0 0 28px rgba(101,42,251,0.4))" }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight cursor-default"
+          style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
         >
           <span
             className="glitch block text-white"

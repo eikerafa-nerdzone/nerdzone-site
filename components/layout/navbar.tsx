@@ -56,9 +56,28 @@ export function Navbar() {
                 className="rounded-lg group-hover:scale-110 transition-transform duration-200"
                 priority
               />
-              <span className="font-bold text-lg text-white">
-                Nerd<span className="text-brand-teal">zone</span>
-              </span>
+              <motion.span
+                className="font-bold text-lg leading-none"
+                whileHover={{ letterSpacing: "0.06em" }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+              >
+                <span className="text-white">Nerd</span>
+                <span className="text-brand-teal">zone</span>
+                {" "}
+                <motion.span
+                  style={{
+                    background: "linear-gradient(90deg, #0acdad, #652afb)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    display: "inline-block",
+                  }}
+                  whileHover={{ filter: "brightness(1.25)" }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Solutions
+                </motion.span>
+              </motion.span>
             </Link>
 
             {/* Desktop links */}

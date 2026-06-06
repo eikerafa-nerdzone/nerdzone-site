@@ -5,7 +5,7 @@ export const siteConfig = {
     "Nerds apaixonados por tecnologia que transformam ideias em soluções digitais reais. Outsourcing de profissionais e o ERPSystem para sua empresa.",
   url: "https://nerdzone.com.br",
   email: "contato@nerdzone.com.br",
-  whatsapp: "5511996082749",
+  whatsapp: "5511939117113",
   whatsappMessage: "Olá! Vim pelo site da Nerdzone e gostaria de saber mais.",
   linkedin: "https://linkedin.com/company/nerdzone-solutions",
   instagram: "https://instagram.com/nerdzone.solutions",

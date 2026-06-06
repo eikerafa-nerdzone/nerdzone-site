@@ -30,6 +30,12 @@ export const metadata: Metadata = {
     "ERPSystem",
   ],
   authors: [{ name: "Nerdzone Solutions" }],
+  icons: {
+    icon: [
+      { url: "/brand/logo-nerdzone.png", type: "image/png" },
+    ],
+    apple: [{ url: "/brand/logo-nerdzone.png", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -37,11 +43,13 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [{ url: "/brand/logo-nerdzone.png", width: 256, height: 256 }],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: ["/brand/logo-nerdzone.png"],
   },
   robots: {
     index: true,

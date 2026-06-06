@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { motion, useInView } from "framer-motion"
-import { Send, Zap, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
+import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 import { siteConfig, navLinks } from "@/lib/constants"
 
@@ -168,9 +169,13 @@ export function Footer() {
             >
               {/* Brand */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-purple to-brand-teal flex items-center justify-center">
-                  <Zap size={20} className="text-white" />
-                </div>
+                <Image
+                  src="/brand/logo-nerdzone.png"
+                  alt="Nerdzone Solutions"
+                  width={40}
+                  height={40}
+                  className="rounded-xl"
+                />
                 <span className="text-2xl font-bold text-white">
                   Nerd<span className="text-brand-teal">zone</span>
                 </span>

@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Zap } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { navLinks, siteConfig } from "@/lib/constants"
 
 export function Navbar() {
@@ -44,12 +45,17 @@ export function Navbar() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2 group"
+              className="flex items-center gap-2.5 group"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-purple to-brand-teal flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Zap size={18} className="text-white" />
-              </div>
+              <Image
+                src="/brand/logo-nerdzone.png"
+                alt="Nerdzone Solutions"
+                width={36}
+                height={36}
+                className="rounded-lg group-hover:scale-110 transition-transform duration-200"
+                priority
+              />
               <span className="font-bold text-lg text-white">
                 Nerd<span className="text-brand-teal">zone</span>
               </span>

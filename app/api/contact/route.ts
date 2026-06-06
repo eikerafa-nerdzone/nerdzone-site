@@ -15,6 +15,9 @@ export async function POST(request: NextRequest) {
 
     const resendKey = process.env.RESEND_API_KEY
     const toEmail = process.env.CONTACT_EMAIL ?? "contato@nerdzone.com.br"
+    // Use verified domain address when available; fall back to Resend shared domain
+    const fromEmail =
+      process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev"
 
     if (!resendKey) {
       // Development fallback: log and return success
@@ -29,7 +32,7 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Site Nerdzone <contato@nerdzone.com.br>",
+        from: `Site Nerdzone <${fromEmail}>`,
         to: [toEmail],
         reply_to: data.email,
         subject: `[Site] Contato de ${data.name}`,

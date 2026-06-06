@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Monitor, Users, ArrowRight } from "lucide-react"
+import { Monitor, Users, ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { produtos } from "@/lib/constants"
 
@@ -95,12 +95,18 @@ export function Produtos() {
                     {Icon && <Icon size={24} className="text-white" strokeWidth={1.5} />}
                   </div>
 
-                  {/* Tag */}
-                  <span
-                    className={`inline-block text-xs font-semibold px-3 py-1 rounded-full border ${colors.tag} mb-4 w-fit`}
-                  >
-                    {produto.tagline}
-                  </span>
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span
+                      className={`inline-block text-xs font-semibold px-3 py-1 rounded-full border ${colors.tag} w-fit`}
+                    >
+                      {produto.tagline}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-400 w-fit">
+                      <Sparkles size={10} />
+                      Orquestração de IA
+                    </span>
+                  </div>
 
                   <h3 className="text-2xl font-bold text-white mb-3">{produto.name}</h3>
                   <p className="text-gray-400 leading-relaxed flex-1">{produto.shortDescription}</p>

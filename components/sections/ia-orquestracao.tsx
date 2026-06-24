@@ -77,7 +77,7 @@ export function IaOrquestracao() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 text-amber-400 text-sm font-semibold tracking-widest uppercase mb-4">
+          <span className="inline-flex items-center gap-2 text-brand-yellow text-sm font-semibold tracking-widest uppercase mb-4">
             <Sparkles size={14} />
             Metodologia
           </span>
@@ -145,9 +145,9 @@ export function IaOrquestracao() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left"
         >
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-amber-400/20 bg-amber-400/5">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <span className="text-amber-400 text-sm font-medium">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-brand-yellow/20 bg-brand-yellow/5">
+            <span className="w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
+            <span className="text-brand-yellow text-sm font-medium">
               Cada entrega passa por revisão adversarial antes do PR
             </span>
           </div>

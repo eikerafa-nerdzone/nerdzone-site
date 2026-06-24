@@ -57,7 +57,7 @@ export function Navbar() {
                 priority
               />
               <motion.span
-                className="font-bold text-lg leading-none"
+                className="font-display font-bold text-lg leading-none"
                 whileHover={{ letterSpacing: "0.06em" }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >

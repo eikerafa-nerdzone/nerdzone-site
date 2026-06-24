@@ -57,7 +57,7 @@ export default function OutsourcingPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-teal/30 bg-brand-teal/10 text-brand-teal text-sm font-medium mb-6">
-              <Users size={14} />
+              <span className="font-mono font-semibold" aria-hidden="true">{"</>"}</span>
               Serviço Nerdzone
             </div>
 

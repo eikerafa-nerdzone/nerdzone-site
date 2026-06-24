@@ -98,11 +98,12 @@ export function Produtos() {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span
-                      className={`inline-block text-xs font-semibold px-3 py-1 rounded-full border ${colors.tag} w-fit`}
+                      className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full border ${colors.tag} w-fit`}
                     >
+                      <span className="font-mono" aria-hidden="true">{"</>"}</span>
                       {produto.tagline}
                     </span>
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-400 w-fit">
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full border border-brand-yellow/30 bg-brand-yellow/10 text-brand-yellow w-fit">
                       <Sparkles size={10} />
                       Orquestração de IA
                     </span>

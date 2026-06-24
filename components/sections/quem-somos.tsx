@@ -50,21 +50,21 @@ export function QuemSomos() {
             className="flex justify-center lg:justify-start"
           >
             <div className="relative">
-              {/* Glow behind mascot */}
+              {/* Soft brand glow behind the mascot */}
               <div
-                className="absolute inset-0 rounded-full blur-3xl opacity-30 scale-75"
+                className="absolute -inset-4 rounded-3xl blur-2xl opacity-30"
                 style={{
-                  background: "radial-gradient(circle, #652afb 0%, #0acdad 100%)",
+                  background:
+                    "radial-gradient(ellipse at center, #652afb 0%, #0acdad 65%, transparent 100%)",
                 }}
                 aria-hidden="true"
               />
               <Image
-                src="/images/nerds.png"
-                alt="Mascote Nerdzone — desenvolvedor nerd apaixonado por tecnologia"
-                width={420}
-                height={460}
-                className="relative z-10 drop-shadow-2xl"
-                priority
+                src="/images/mascote-nerdzone.png"
+                alt="Mascote oficial Nerdzone — desenvolvedor com mindset de engenharia"
+                width={1382}
+                height={1138}
+                className="relative z-10 w-full h-auto max-w-[540px] rounded-2xl border border-white/10 shadow-2xl"
               />
             </div>
           </motion.div>

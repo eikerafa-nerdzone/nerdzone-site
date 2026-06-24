@@ -48,7 +48,7 @@ export default function ERPSystemPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-purple/30 bg-brand-purple/10 text-brand-purple text-sm font-medium mb-6">
-              <Monitor size={14} />
+              <span className="font-mono font-semibold" aria-hidden="true">{"</>"}</span>
               Produto Nerdzone
             </div>
 

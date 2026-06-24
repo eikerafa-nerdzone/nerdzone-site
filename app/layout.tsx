@@ -37,12 +37,6 @@ export const metadata: Metadata = {
     "ERPSystem",
   ],
   authors: [{ name: "Nerdzone Solutions" }],
-  icons: {
-    icon: [
-      { url: "/brand/logo-nerdzone.png", type: "image/png" },
-    ],
-    apple: [{ url: "/brand/logo-nerdzone.png", type: "image/png" }],
-  },
   openGraph: {
     type: "website",
     locale: "pt_BR",

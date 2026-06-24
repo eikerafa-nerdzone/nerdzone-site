@@ -50,9 +50,9 @@ Reduz duplicação e destrava a consistência das demais frentes.
 
 - 🟡 Token de gradiente (`--brand-gradient`) e `.gradient-text` ✅ (aplicada em hero e IA); faltam `.gradient-bg`, `.glass-card`, `.brand-glow`, `.section-padding`, `.container-default`
 - ✅ `lib/validations.ts` — schema Zod de contato centralizado (mensagens PT + limites `max`); `route.ts` e `footer.tsx` agora importam (duplicação eliminada)
-- ⬜ `lib/utils.ts` — helpers compartilhados (ex.: `cn` para composição de classes)
-- ⬜ `components/ui/`: `Button` (primary/secondary/ghost), `Card` (default/highlighted), `Badge` (teal/purple/yellow), `SectionTitle` (eyebrow/title/description), `GradientText`, `IconTile`
-- ⬜ Refatorar as seções para usar os componentes base → padroniza cards, títulos, botões e ícones
+- ✅ `lib/utils.ts` — `cn` minimalista (sem dependências)
+- 🟡 `components/ui/`: `GradientText` ✅ e `SectionTitle` ✅ criados e aplicados; faltam `Button` (primary/secondary/ghost), `Card` (default/highlighted), `Badge` (teal/purple/yellow), `IconTile`
+- 🟡 Refatorar seções para usar os componentes base → cabeçalhos de produtos/mvv/IA já usam `SectionTitle`, hero/IA usam `GradientText`; faltam footer, quem-somos, páginas de produto e os cards/botões/badges
 
 ### Fase 2 — Documentação
 

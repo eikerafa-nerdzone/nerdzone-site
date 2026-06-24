@@ -11,6 +11,8 @@ import {
   GitMerge,
   Sparkles,
 } from "lucide-react"
+import { SectionTitle } from "@/components/ui/section-title"
+import { GradientText } from "@/components/ui/gradient-text"
 
 const pilares = [
   {
@@ -75,22 +77,18 @@ export function IaOrquestracao() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 text-brand-yellow text-sm font-semibold tracking-widest uppercase mb-4">
-            <Sparkles size={14} />
-            Metodologia
-          </span>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
-            Desenvolvemos com{" "}
-            <span className="gradient-text">Orquestração de IA</span>
-          </h2>
-
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A IA atua como engenheiro sênior em cada sprint — revisando arquitetura, antecipando riscos e garantindo
-            que o que entra em produção está correto, seguro e rastreável.
-          </p>
+          <SectionTitle
+            eyebrow="Metodologia"
+            accent="yellow"
+            icon={<Sparkles size={14} />}
+            title={
+              <>
+                Desenvolvemos com <GradientText>Orquestração de IA</GradientText>
+              </>
+            }
+            description="A IA atua como engenheiro sênior em cada sprint — revisando arquitetura, antecipando riscos e garantindo que o que entra em produção está correto, seguro e rastreável."
+          />
         </motion.div>
 
         {/* Pilares grid */}

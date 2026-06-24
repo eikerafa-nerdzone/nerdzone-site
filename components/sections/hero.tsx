@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { ArrowDown, ChevronRight } from "lucide-react"
 import { siteConfig } from "@/lib/constants"
+import { GradientText } from "@/components/ui/gradient-text"
 
 function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -124,7 +125,7 @@ export function Hero() {
           </span>
           <span className="block mt-1">
             para{" "}
-            <span className="gradient-text">conectar você</span>
+            <GradientText>conectar você</GradientText>
           </span>
         </motion.h1>
 

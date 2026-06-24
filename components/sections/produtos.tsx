@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion"
 import { Monitor, Users, ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { produtos } from "@/lib/constants"
+import { SectionTitle } from "@/components/ui/section-title"
 
 const iconMap = {
   monitor: Monitor,
@@ -46,17 +47,12 @@ export function Produtos() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
         >
-          <span className="text-brand-teal text-sm font-semibold tracking-widest uppercase mb-4 block">
-            Soluções Nerdzone
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Produtos & Serviços
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Do sistema de gestão à alocação de talentos — temos o que sua empresa precisa para crescer.
-          </p>
+          <SectionTitle
+            eyebrow="Soluções Nerdzone"
+            title="Produtos & Serviços"
+            description="Do sistema de gestão à alocação de talentos — temos o que sua empresa precisa para crescer."
+          />
         </motion.div>
 
         {/* Product cards */}

@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Rocket, Binoculars, Diamond } from "lucide-react"
 import { mvv } from "@/lib/constants"
+import { SectionTitle } from "@/components/ui/section-title"
 
 const iconMap = {
   rocket: Rocket,
@@ -33,18 +34,18 @@ export function MVV() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
         >
-          <span className="text-brand-yellow text-sm font-semibold tracking-widest uppercase mb-4 block">
-            Nossa essência
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Mundo Nerdzone
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Esse é o nosso mundo e nossa{" "}
-            <span className="text-brand-yellow font-medium">Filosofia Dimensional</span>
-          </p>
+          <SectionTitle
+            eyebrow="Nossa essência"
+            accent="yellow"
+            title="Mundo Nerdzone"
+            description={
+              <>
+                Esse é o nosso mundo e nossa{" "}
+                <span className="text-brand-yellow font-medium">Filosofia Dimensional</span>
+              </>
+            }
+          />
         </motion.div>
 
         {/* Cards */}

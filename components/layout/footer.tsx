@@ -3,21 +3,12 @@
 import { useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
 import { motion, useInView } from "framer-motion"
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { siteConfig, navLinks } from "@/lib/constants"
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Nome deve ter ao menos 2 caracteres"),
-  email: z.string().email("E-mail inválido"),
-  phone: z.string().min(10, "Telefone inválido").max(15),
-  message: z.string().min(10, "Mensagem deve ter ao menos 10 caracteres"),
-})
-
-type ContactFormData = z.infer<typeof contactSchema>
+import { contactSchema, type ContactFormData } from "@/lib/validations"
 
 function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")

@@ -1,12 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { z } from "zod"
-
-const contactSchema = z.object({
-  name: z.string().min(2).max(100),
-  email: z.string().email().max(254),
-  phone: z.string().min(10).max(15),
-  message: z.string().min(10).max(2000),
-})
+import { contactSchema } from "@/lib/validations"
 
 export async function POST(request: NextRequest) {
   try {

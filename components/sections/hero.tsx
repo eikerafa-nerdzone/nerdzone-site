@@ -124,16 +124,7 @@ export function Hero() {
           </span>
           <span className="block mt-1">
             para{" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg, #652afb, #0acdad)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              conectar você
-            </span>
+            <span className="gradient-text">conectar você</span>
           </span>
         </motion.h1>
 

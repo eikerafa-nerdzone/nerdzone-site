@@ -10,6 +10,7 @@
   --brand-darker:  #111820;
   --brand-yellow:  #ffb300;
   --brand-yellow-dark: #d99700;
+  --brand-gradient: linear-gradient(90deg, #652afb, #0acdad);
 }
 
 /* ─── Tailwind v4 theme extension ───────────────────────────── */
@@ -49,6 +50,15 @@ body {
 /* ─── Headings use the brand display typeface (Space Grotesk) ─── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-space-grotesk), var(--font-geist-sans), Arial, sans-serif;
+}
+
+/* ─── Brand utilities ───────────────────────────────────────── */
+.gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* ─── Scrollbar ─────────────────────────────────────────────── */

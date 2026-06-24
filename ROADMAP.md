@@ -36,7 +36,7 @@ consistência de componentes e responsividade — preservando a identidade visua
 ## Parcial 🟡
 
 - **SEO / metadata** — base pronta (title/template, keywords, OpenGraph, Twitter, metadataBase); falta copy mais forte e imagem OG 1200×630 real (hoje usa o logo 256×256)
-- **Tokens de marca** — cores centralizadas; faltam token de gradiente e classes utilitárias; o gradiente está duplicado inline em ~6 pontos
+- **Tokens de marca** — cores e token de gradiente (`--brand-gradient`) centralizados; `.gradient-text` criada e aplicada (hero, IA); faltam `.gradient-bg` / `.glass-card` / `.brand-glow` / `.section-padding` / `.container-default` e os gradientes 135° dos botões (ainda inline)
 - **Assets** — favicon = monograma ok; falta convenção de nomes (logo horizontal, og-image) e remover os SVGs órfãos do create-next-app
 - **Acessibilidade do formulário** — inputs apenas com `placeholder`; faltam `<label>` reais e `aria-describedby` ligando o erro ao campo
 
@@ -48,8 +48,8 @@ consistência de componentes e responsividade — preservando a identidade visua
 
 Reduz duplicação e destrava a consistência das demais frentes.
 
-- ⬜ Token de gradiente + utilitárias em `globals.css`: `.gradient-text`, `.gradient-bg`, `.glass-card`, `.brand-glow`, `.section-padding`, `.container-default`
-- ⬜ `lib/validations.ts` — centralizar o schema Zod de contato (hoje **duplicado** em `app/api/contact/route.ts` e `components/layout/footer.tsx`)
+- 🟡 Token de gradiente (`--brand-gradient`) e `.gradient-text` ✅ (aplicada em hero e IA); faltam `.gradient-bg`, `.glass-card`, `.brand-glow`, `.section-padding`, `.container-default`
+- ✅ `lib/validations.ts` — schema Zod de contato centralizado (mensagens PT + limites `max`); `route.ts` e `footer.tsx` agora importam (duplicação eliminada)
 - ⬜ `lib/utils.ts` — helpers compartilhados (ex.: `cn` para composição de classes)
 - ⬜ `components/ui/`: `Button` (primary/secondary/ghost), `Card` (default/highlighted), `Badge` (teal/purple/yellow), `SectionTitle` (eyebrow/title/description), `GradientText`, `IconTile`
 - ⬜ Refatorar as seções para usar os componentes base → padroniza cards, títulos, botões e ícones

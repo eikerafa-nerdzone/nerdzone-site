@@ -84,16 +84,7 @@ export function IaOrquestracao() {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
             Desenvolvemos com{" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg, #652afb, #0acdad)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Orquestração de IA
-            </span>
+            <span className="gradient-text">Orquestração de IA</span>
           </h2>
 
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">

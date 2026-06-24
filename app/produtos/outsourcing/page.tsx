@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowLeft, Check, Users, Code2, Palette, Database, Smartphone, Shield, ExternalLink } from "lucide-react"
 import { siteConfig } from "@/lib/constants"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Outsourcing de Profissionais",
@@ -76,22 +77,13 @@ export default function OutsourcingPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-teal/30"
-                style={{ background: "linear-gradient(135deg, #0acdad, #089e86)" }}
-              >
+              <Button href={whatsappUrl} external gradient="teal">
                 <ExternalLink size={18} />
                 Quero um profissional
-              </a>
-              <Link
-                href="/#contato"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-gray-300 border border-brand-teal/40 hover:border-brand-teal/60 hover:text-brand-teal transition-all duration-300"
-              >
+              </Button>
+              <Button href="/#contato" variant="secondary" accent="teal">
                 Falar com especialista
-              </Link>
+              </Button>
             </div>
           </div>
 
@@ -192,21 +184,18 @@ export default function OutsourcingPage() {
               <p className="text-gray-400 text-sm">
                 Fale conosco agora e receba indicações de perfis em até 72 horas.
               </p>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white hover:opacity-90 transition-opacity shadow-lg shadow-brand-teal/25"
-                style={{ background: "linear-gradient(135deg, #0acdad, #652afb)" }}
-              >
+              <Button href={whatsappUrl} external size="sm" gradient="teal-purple">
                 Iniciar pelo WhatsApp
-              </a>
-              <Link
+              </Button>
+              <Button
                 href="/#contato"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-300 border border-white/10 hover:border-brand-teal/40 hover:text-brand-teal transition-all duration-300 text-sm"
+                variant="secondary"
+                accent="neutral"
+                size="sm"
+                className="text-sm"
               >
                 Ou preencher formulário
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

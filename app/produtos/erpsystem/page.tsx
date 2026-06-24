@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft, Check, Monitor, BarChart3, Users, ShoppingCart, Package, FileText, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "ERPSystem",
@@ -62,22 +63,13 @@ export default function ERPSystemPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={ERP_LOGIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-purple/30"
-                style={{ background: "linear-gradient(135deg, #652afb, #4d1fc4)" }}
-              >
+              <Button href={ERP_LOGIN_URL} external gradient="purple">
                 <ExternalLink size={18} />
                 Acessar o ERPSystem
-              </a>
-              <Link
-                href="/#contato"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-gray-300 border border-brand-purple/40 hover:border-brand-teal/60 hover:text-brand-teal transition-all duration-300"
-              >
+              </Button>
+              <Button href="/#contato" variant="secondary" accent="purple">
                 Solicitar demonstração
-              </Link>
+              </Button>
             </div>
           </div>
 
@@ -153,16 +145,10 @@ export default function ERPSystemPage() {
               <p className="text-white font-semibold mb-1">Pronto para começar?</p>
               <p className="text-gray-400 text-sm">Acesse agora ou entre em contato para uma demonstração personalizada.</p>
             </div>
-            <a
-              href={ERP_LOGIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white hover:opacity-90 transition-opacity shadow-lg shadow-brand-purple/25"
-              style={{ background: "linear-gradient(135deg, #652afb, #0acdad)" }}
-            >
+            <Button href={ERP_LOGIN_URL} external size="sm" className="flex-shrink-0">
               <ExternalLink size={16} />
               Acessar o sistema
-            </a>
+            </Button>
           </div>
         </div>
       </section>

@@ -65,6 +65,15 @@ h1, h2, h3, h4, h5, h6 {
 .gradient-bg {
   background: var(--brand-gradient-bg);
 }
+.gradient-bg-purple {
+  background: linear-gradient(135deg, #652afb, #4d1fc4);
+}
+.gradient-bg-teal {
+  background: linear-gradient(135deg, #0acdad, #089e86);
+}
+.gradient-bg-teal-purple {
+  background: linear-gradient(135deg, #0acdad, #652afb);
+}
 
 /* ─── Scrollbar ─────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }

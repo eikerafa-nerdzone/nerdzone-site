@@ -51,8 +51,8 @@ Reduz duplicação e destrava a consistência das demais frentes.
 - 🟡 Token de gradiente (`--brand-gradient`) e `.gradient-text` ✅ (aplicada em hero e IA); faltam `.gradient-bg`, `.glass-card`, `.brand-glow`, `.section-padding`, `.container-default`
 - ✅ `lib/validations.ts` — schema Zod de contato centralizado (mensagens PT + limites `max`); `route.ts` e `footer.tsx` agora importam (duplicação eliminada)
 - ✅ `lib/utils.ts` — `cn` minimalista (sem dependências)
-- 🟡 `components/ui/`: `GradientText` ✅, `SectionTitle` ✅, `Button` ✅ (primary/secondary/ghost, só `<button>` por ora), `Badge` ✅ (purple/teal/yellow, sm/md, `code`); `Card`/`IconTile` **adiados para a Fase 4** — cards são animados (`motion`)/`Link` e bespoke, componentizar agora seria abstração vazada; harmonizar junto com a passada de responsividade
-- 🟡 Refatorar seções para usar os componentes base → cabeçalhos produtos/mvv/IA usam `SectionTitle`; hero/IA usam `GradientText`; CTAs do hero e submit do footer usam `Button`; tags dos cards e pills das páginas usam `Badge`; faltam quem-somos e os CTAs das páginas de produto + navbar (precisam de `Button` polimórfico `<a>`/`Link`)
+- ✅ `components/ui/`: `GradientText`, `SectionTitle`, `Badge` (purple/teal/yellow, sm/md, `code`), `Button` polimórfico (`<button>`/`<a>`/`Link`; variants primary/secondary/ghost; `gradient` brand/purple/teal/teal-purple; `accent` purple/teal/neutral; `size` xs/sm/md). `Card`/`IconTile` **adiados para a Fase 4** — cards são animados (`motion`)/`Link` e bespoke; harmonizar junto com a responsividade
+- 🟡 Refatorar seções → cabeçalhos produtos/mvv/IA usam `SectionTitle`; hero/IA usam `GradientText`; CTAs do hero, submit do footer e **todos os CTAs das páginas de produto** usam `Button` (gradientes temáticos preservados); tags/pills usam `Badge`. **Navbar mantido bespoke** de propósito (CTA compacto; `hover:scale` causaria layout shift na barra fixa). Falta quem-somos (será tratado na Fase 4)
 
 ### Fase 2 — Documentação
 

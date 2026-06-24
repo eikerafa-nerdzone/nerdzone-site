@@ -9,6 +9,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { siteConfig, navLinks } from "@/lib/constants"
 import { contactSchema, type ContactFormData } from "@/lib/validations"
+import { Button } from "@/components/ui/button"
 
 function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
@@ -120,11 +121,11 @@ function ContactForm() {
         </motion.div>
       )}
 
-      <button
+      <Button
         type="submit"
+        fullWidth
+        size="sm"
         disabled={status === "loading" || status === "success"}
-        className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white transition-all duration-300 hover:opacity-90 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed shadow-lg shadow-brand-purple/20"
-        style={{ background: "linear-gradient(135deg, #652afb, #0acdad)" }}
       >
         {status === "loading" ? (
           <Loader2 size={18} className="animate-spin" />
@@ -132,7 +133,7 @@ function ContactForm() {
           <Send size={16} />
         )}
         {status === "loading" ? "Enviando..." : "Enviar mensagem"}
-      </button>
+      </Button>
     </form>
   )
 }

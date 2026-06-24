@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { ArrowDown, ChevronRight } from "lucide-react"
 import { siteConfig } from "@/lib/constants"
 import { GradientText } from "@/components/ui/gradient-text"
+import { Button } from "@/components/ui/button"
 
 function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -146,26 +147,17 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button
-            onClick={scrollToProducts}
-            className="group flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:opacity-90 hover:scale-105 shadow-lg shadow-brand-purple/30"
-            style={{
-              background: "linear-gradient(135deg, #652afb, #0acdad)",
-            }}
-          >
+          <Button onClick={scrollToProducts}>
             Conheça nossos produtos
             <ChevronRight
               size={18}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </button>
+          </Button>
 
-          <button
-            onClick={scrollToContact}
-            className="flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-gray-300 border border-brand-purple/40 hover:border-brand-teal/60 hover:text-brand-teal transition-all duration-300"
-          >
+          <Button variant="secondary" onClick={scrollToContact}>
             Fale conosco
-          </button>
+          </Button>
         </motion.div>
 
       </div>

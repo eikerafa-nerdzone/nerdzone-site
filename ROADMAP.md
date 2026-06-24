@@ -36,7 +36,7 @@ consistência de componentes e responsividade — preservando a identidade visua
 ## Parcial 🟡
 
 - **SEO / metadata** — base pronta (title/template, keywords, OpenGraph, Twitter, metadataBase); falta copy mais forte e imagem OG 1200×630 real (hoje usa o logo 256×256)
-- **Tokens de marca** — cores e token de gradiente (`--brand-gradient`) centralizados; `.gradient-text` criada e aplicada (hero, IA); faltam `.gradient-bg` / `.glass-card` / `.brand-glow` / `.section-padding` / `.container-default` e os gradientes 135° dos botões (ainda inline)
+- **Tokens de marca** — cores e tokens de gradiente (`--brand-gradient` 90°, `--brand-gradient-bg` 135°) centralizados; `.gradient-text` e `.gradient-bg` criadas e aplicadas (hero, IA, botões do hero/footer); faltam `.glass-card` / `.brand-glow` / `.section-padding` / `.container-default`; gradientes próprios dos botões das páginas de produto ainda inline
 - **Assets** — favicon = monograma ok; falta convenção de nomes (logo horizontal, og-image) e remover os SVGs órfãos do create-next-app
 - **Acessibilidade do formulário** — inputs apenas com `placeholder`; faltam `<label>` reais e `aria-describedby` ligando o erro ao campo
 
@@ -51,8 +51,8 @@ Reduz duplicação e destrava a consistência das demais frentes.
 - 🟡 Token de gradiente (`--brand-gradient`) e `.gradient-text` ✅ (aplicada em hero e IA); faltam `.gradient-bg`, `.glass-card`, `.brand-glow`, `.section-padding`, `.container-default`
 - ✅ `lib/validations.ts` — schema Zod de contato centralizado (mensagens PT + limites `max`); `route.ts` e `footer.tsx` agora importam (duplicação eliminada)
 - ✅ `lib/utils.ts` — `cn` minimalista (sem dependências)
-- 🟡 `components/ui/`: `GradientText` ✅ e `SectionTitle` ✅ criados e aplicados; faltam `Button` (primary/secondary/ghost), `Card` (default/highlighted), `Badge` (teal/purple/yellow), `IconTile`
-- 🟡 Refatorar seções para usar os componentes base → cabeçalhos de produtos/mvv/IA já usam `SectionTitle`, hero/IA usam `GradientText`; faltam footer, quem-somos, páginas de produto e os cards/botões/badges
+- 🟡 `components/ui/`: `GradientText` ✅, `SectionTitle` ✅, `Button` ✅ (primary/secondary/ghost, só `<button>` por ora); faltam `Card` (default/highlighted), `Badge` (teal/purple/yellow), `IconTile`
+- 🟡 Refatorar seções para usar os componentes base → cabeçalhos produtos/mvv/IA usam `SectionTitle`; hero/IA usam `GradientText`; CTAs do hero e submit do footer usam `Button`; faltam quem-somos, páginas de produto (precisam de `Button` polimórfico `<a>`/`Link` com gradiente próprio) e os cards/badges
 
 ### Fase 2 — Documentação
 

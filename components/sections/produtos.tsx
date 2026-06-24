@@ -6,6 +6,7 @@ import { Monitor, Users, ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { produtos } from "@/lib/constants"
 import { SectionTitle } from "@/components/ui/section-title"
+import { Badge } from "@/components/ui/badge"
 
 const iconMap = {
   monitor: Monitor,
@@ -18,20 +19,14 @@ const colorMap = {
     glow: "rgba(101,42,251,0.1)",
     iconBg: "from-brand-purple to-brand-purple-dark",
     iconShadow: "shadow-brand-purple/25",
-    tag: "bg-brand-purple/15 text-brand-purple border-brand-purple/30",
     arrow: "text-brand-purple group-hover:text-white",
-    arrowBg: "group-hover:bg-brand-purple",
-    line: "from-brand-purple",
   },
   teal: {
     border: "hover:border-brand-teal/50",
     glow: "rgba(10,205,173,0.1)",
     iconBg: "from-brand-teal to-brand-teal-dark",
     iconShadow: "shadow-brand-teal/25",
-    tag: "bg-brand-teal/15 text-brand-teal border-brand-teal/30",
     arrow: "text-brand-teal group-hover:text-white",
-    arrowBg: "group-hover:bg-brand-teal",
-    line: "from-brand-teal",
   },
 }
 
@@ -93,16 +88,12 @@ export function Produtos() {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span
-                      className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full border ${colors.tag} w-fit`}
-                    >
-                      <span className="font-mono" aria-hidden="true">{"</>"}</span>
+                    <Badge accent={produto.color as "purple" | "teal"} code>
                       {produto.tagline}
-                    </span>
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full border border-brand-yellow/30 bg-brand-yellow/10 text-brand-yellow w-fit">
-                      <Sparkles size={10} />
+                    </Badge>
+                    <Badge accent="yellow" icon={<Sparkles size={10} />}>
                       Orquestração de IA
-                    </span>
+                    </Badge>
                   </div>
 
                   <h3 className="text-2xl font-bold text-white mb-3">{produto.name}</h3>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft, Check, Monitor, BarChart3, Users, ShoppingCart, Package, FileText, ExternalLink } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 
 export const metadata: Metadata = {
   title: "ERPSystem",
@@ -47,10 +48,9 @@ export default function ERPSystemPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-purple/30 bg-brand-purple/10 text-brand-purple text-sm font-medium mb-6">
-              <span className="font-mono font-semibold" aria-hidden="true">{"</>"}</span>
+            <Badge accent="purple" size="md" code className="mb-6">
               Produto Nerdzone
-            </div>
+            </Badge>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
               ERP<span className="text-brand-purple">System</span>

@@ -56,7 +56,7 @@ Reduz duplicação e destrava a consistência das demais frentes.
 
 ### Fase 2 — Documentação
 
-- ⬜ Reescrever `README.md` (hoje é o default do create-next-app): descrição, objetivo, stack, como rodar / configurar env / build / deploy, estrutura de pastas, padrões da marca, convenções de componentes, roadmap, assets
+- ✅ `README.md` reescrito: descrição, objetivo, stack, como rodar / env / scripts / deploy, estrutura de pastas, identidade visual (paleta com lime), convenções de componentes, roadmap. URL canônica `nerdzone-site.vercel.app` aplicada no `siteConfig.url`
 - ⬜ `docs/brand-system.md`: paleta, tipografia, uso do logo, gradiente, estilo de cards/botões/ícones, uso do mascote e exemplos de aplicação
 
 ### Fase 3 — SEO & social

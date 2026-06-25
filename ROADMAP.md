@@ -61,9 +61,9 @@ Reduz duplicação e destrava a consistência das demais frentes.
 
 ### Fase 3 — SEO & social
 
-- ⬜ Imagem Open Graph 1200×630 — gerar via código (`app/opengraph-image.tsx` com `ImageResponse` do Next), evitando depender de asset manual
-- ⬜ Reforçar `description` e `keywords` no metadata
-- ⬜ Definir e aplicar a URL canônica (ver Decisões pendentes)
+- ✅ Imagem Open Graph 1200×630 gerada por código (`app/opengraph-image.tsx` com `ImageResponse`, build-time); alimenta og:image e twitter:image. Removidos os `images` manuais do metadata
+- 🟡 `keywords` reforçados ✅; `description` ainda atrelada à copy (será revista no ajuste de tom meio-termo)
+- ✅ URL canônica `nerdzone-site.vercel.app` aplicada (Fase 2)
 
 ### Fase 4 — Responsividade total (adaptação completa por dispositivo) ⭐
 

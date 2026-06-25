@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowLeft, Check, Monitor, BarChart3, Users, ShoppingCart, Package, FileText, ExternalLink } from "lucide-react"
+import Image from "next/image"
+import { ArrowLeft, Check, BarChart3, Users, ShoppingCart, Package, FileText, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
@@ -73,27 +74,23 @@ export default function ERPSystemPage() {
             </div>
           </div>
 
-          {/* Visual placeholder — substituir por screenshot do sistema */}
-          <div
-            className="relative h-80 lg:h-96 rounded-2xl border border-brand-purple/20 flex items-center justify-center overflow-hidden"
-            style={{
-              background: "linear-gradient(135deg, rgba(101,42,251,0.15) 0%, rgba(10,205,173,0.05) 100%)",
-            }}
-          >
-            <div className="text-center">
-              <Monitor size={64} className="text-brand-purple/40 mx-auto mb-4" />
-              <p className="text-gray-500 text-sm">Screenshot do sistema</p>
-              <p className="text-gray-600 text-xs mt-1">(adicionar imagem em /public/images/erp-preview.png)</p>
-            </div>
-            {/* Grid lines decoration */}
+          {/* App screenshot */}
+          <div className="relative">
             <div
-              className="absolute inset-0 opacity-10"
+              className="absolute -inset-3 rounded-3xl blur-2xl opacity-25"
               style={{
-                backgroundImage:
-                  "linear-gradient(rgba(101,42,251,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(101,42,251,0.5) 1px, transparent 1px)",
-                backgroundSize: "40px 40px",
+                background:
+                  "radial-gradient(ellipse at center, rgba(101,42,251,0.4) 0%, transparent 70%)",
               }}
               aria-hidden="true"
+            />
+            <Image
+              src="/images/erp-preview.png"
+              alt="Painel de controle do ERPSystem — indicadores, faturamento e pedidos em tempo real"
+              width={1889}
+              height={818}
+              sizes="(max-width: 1024px) 100vw, 600px"
+              className="relative z-10 w-full h-auto rounded-2xl border border-brand-purple/20 shadow-2xl"
             />
           </div>
         </div>

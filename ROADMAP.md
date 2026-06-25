@@ -32,6 +32,7 @@ consistência de componentes e responsividade — preservando a identidade visua
 - Formulário de contato: Zod, estados de loading/sucesso/erro, anti-duplo-envio
 - `lib/constants.ts` com `siteConfig`, `navLinks`, `produtos`, `mvv`
 - Hero: `h1` único e acessível, CTAs acima da dobra
+- ERPSystem: screenshot real do painel incorporado na página (substituiu o placeholder), `next/image` responsivo com `sizes` e moldura
 
 ## Parcial 🟡
 

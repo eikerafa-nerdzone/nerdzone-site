@@ -69,6 +69,11 @@ h1, h2, h3, h4, h5, h6 {
   .container-brand { max-width: 90rem; }
 }
 
+/* ─── Fluid display type (escala contínua por viewport) ───────── */
+.text-fluid-display { font-size: clamp(2.25rem, 1rem + 5vw, 5.25rem); }
+.text-fluid-h1 { font-size: clamp(2.25rem, 1.25rem + 4.2vw, 4.5rem); }
+.text-fluid-h2 { font-size: clamp(1.875rem, 0.9rem + 3.2vw, 3.5rem); }
+
 /* ─── Brand utilities ───────────────────────────────────────── */
 .gradient-text {
   background: var(--brand-gradient);

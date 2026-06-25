@@ -37,7 +37,7 @@ export function SectionTitle({
         {icon}
         {eyebrow}
       </span>
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+      <h2 className="text-fluid-h2 font-bold text-white mb-4 leading-tight">
         {title}
       </h2>
       {description && (

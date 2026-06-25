@@ -62,7 +62,7 @@ export default function OutsourcingPage() {
               Serviço Nerdzone
             </Badge>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+            <h1 className="text-fluid-h1 font-extrabold text-white mb-6 leading-tight">
               Out<span className="text-brand-teal">sourcing</span>
             </h1>
 

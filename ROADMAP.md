@@ -73,7 +73,7 @@ Ponto observado em uso: em monitor grande / desktop há espaço ocioso e a compo
 Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tailwind v4 + CSS moderno):
 
 - ⬜ **Container queries** (`@container` nativo do Tailwind v4) — responsividade por componente, não apenas por viewport
-- ⬜ **Tipografia fluida** com `clamp()` — escala contínua entre breakpoints (títulos, eyebrows, corpo)
+- ✅ **Tipografia fluida** com `clamp()` nos títulos de display (hero h1, h2 de seção, h1 das páginas) — mínimo no mobile igual ao anterior, cresce no ultrawide (até 84/56px); utilitárias `.text-fluid-display/-h1/-h2`
 - ⬜ **Espaçamento fluido** com `clamp()` — padding de seção e gaps adaptáveis
 - ✅ **Unidades de viewport modernas** — Hero migrado de `min-h-screen` para `min-h-dvh`
 - ✅ **`text-wrap: balance`** em todos os títulos (regra base `h1–h6`); `pretty` em parágrafos longos pendente

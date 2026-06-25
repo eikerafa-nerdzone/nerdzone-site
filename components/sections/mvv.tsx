@@ -28,7 +28,7 @@ export function MVV() {
       {/* Top divider */}
       <div className="section-divider mb-0" aria-hidden="true" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="container-brand pt-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

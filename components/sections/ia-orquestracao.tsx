@@ -71,7 +71,7 @@ export function IaOrquestracao() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative container-brand">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

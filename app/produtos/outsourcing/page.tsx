@@ -44,7 +44,7 @@ export default function OutsourcingPage() {
   return (
     <main className="min-h-screen bg-brand-dark pt-24 pb-20">
       {/* Back link */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <div className="container-brand mb-12">
         <Link
           href="/#produtos"
           className="inline-flex items-center gap-2 text-gray-400 hover:text-brand-teal text-sm transition-colors"
@@ -55,7 +55,7 @@ export default function OutsourcingPage() {
       </div>
 
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="container-brand mb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <Badge accent="teal" size="md" code className="mb-6">
@@ -112,7 +112,7 @@ export default function OutsourcingPage() {
       </section>
 
       {/* Perfis */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="container-brand mb-20">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Perfis disponíveis</h2>
           <p className="text-gray-400">Tecnologistas experientes prontos para entrar no seu time</p>
@@ -135,7 +135,7 @@ export default function OutsourcingPage() {
       </section>
 
       {/* Como funciona */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="container-brand mb-20">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Como funciona</h2>
           <p className="text-gray-400">Do briefing ao onboarding em dias, não semanas</p>
@@ -159,7 +159,7 @@ export default function OutsourcingPage() {
       </section>
 
       {/* CTA final */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="container-brand">
         <div
           className="rounded-2xl p-8 sm:p-12 border border-brand-teal/20"
           style={{

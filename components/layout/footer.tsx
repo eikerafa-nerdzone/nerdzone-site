@@ -151,7 +151,7 @@ export function Footer() {
         className="py-20"
         style={{ background: "linear-gradient(180deg, transparent, rgba(101,42,251,0.05))" }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-brand">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Left: info */}
             <motion.div
@@ -283,7 +283,7 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5 py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="container-brand flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Nerdzone Solutions. Todos os direitos reservados.
           </p>

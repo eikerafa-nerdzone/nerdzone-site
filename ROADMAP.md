@@ -75,10 +75,10 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 - ⬜ **Container queries** (`@container` nativo do Tailwind v4) — responsividade por componente, não apenas por viewport
 - ⬜ **Tipografia fluida** com `clamp()` — escala contínua entre breakpoints (títulos, eyebrows, corpo)
 - ⬜ **Espaçamento fluido** com `clamp()` — padding de seção e gaps adaptáveis
-- ⬜ **Unidades de viewport modernas** `dvh / svh / lvh` — o Hero usa `min-h-screen` (100vh, com bug da barra de endereço no mobile); migrar para `min-h-dvh`
-- ⬜ **`text-wrap: balance`** em títulos e **`pretty`** em parágrafos longos
+- ✅ **Unidades de viewport modernas** — Hero migrado de `min-h-screen` para `min-h-dvh`
+- ✅ **`text-wrap: balance`** em todos os títulos (regra base `h1–h6`); `pretty` em parágrafos longos pendente
 - ⬜ **Grids fluidos** (`auto-fit` + `minmax`) onde fizer sentido
-- ⬜ **Ultrawide** — revisar comportamento acima de ~1280px (containers travam em `max-w-7xl`); decidir entre expandir, aumentar densidade ou centralizar com respiro intencional
+- ✅ **Ultrawide** — utilitário `.container-brand` substituiu os 16 `max-w-7xl`; alarga de 80rem para 90rem (1440px) em telas ≥1536px
 - ⬜ `next/image` com `sizes` adequados por breakpoint
 - ⬜ Auditoria por seção × breakpoint: Navbar (menu mobile), Hero, Quem Somos (mascote sem sobrepor texto), MVV, IA, Produtos (empilhamento), Footer/formulário, páginas de produto
 - ⬜ Botão flutuante de WhatsApp não cobrir conteúdo importante no mobile

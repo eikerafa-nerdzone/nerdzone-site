@@ -90,7 +90,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-dvh flex items-center justify-center overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #19242f 0%, #1a1040 50%, #19242f 100%)",
       }}

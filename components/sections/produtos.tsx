@@ -36,7 +36,7 @@ export function Produtos() {
 
   return (
     <section id="produtos" ref={ref} className="py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-brand">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

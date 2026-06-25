@@ -35,7 +35,7 @@ export default function ERPSystemPage() {
   return (
     <main className="min-h-screen bg-brand-dark pt-24 pb-20">
       {/* Back link */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <div className="container-brand mb-12">
         <Link
           href="/#produtos"
           className="inline-flex items-center gap-2 text-gray-400 hover:text-brand-teal text-sm transition-colors"
@@ -46,7 +46,7 @@ export default function ERPSystemPage() {
       </div>
 
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="container-brand mb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <Badge accent="purple" size="md" code className="mb-6">
@@ -100,7 +100,7 @@ export default function ERPSystemPage() {
       </section>
 
       {/* Features */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="container-brand mb-20">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Módulos do sistema</h2>
           <p className="text-gray-400">Tudo que sua empresa precisa em um só lugar</p>
@@ -123,7 +123,7 @@ export default function ERPSystemPage() {
       </section>
 
       {/* Highlights */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="container-brand mb-20">
         <div
           className="rounded-2xl p-8 sm:p-12 border border-brand-purple/20"
           style={{

@@ -282,7 +282,7 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/5 py-6">
+      <div className="border-t border-white/5 pt-6 pb-20 sm:pb-6">
         <div className="container-brand flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Nerdzone Solutions. Todos os direitos reservados.

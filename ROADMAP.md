@@ -52,7 +52,7 @@ Reduz duplicação e destrava a consistência das demais frentes.
 - ✅ `lib/validations.ts` — schema Zod de contato centralizado (mensagens PT + limites `max`); `route.ts` e `footer.tsx` agora importam (duplicação eliminada)
 - ✅ `lib/utils.ts` — `cn` minimalista (sem dependências)
 - ✅ `components/ui/`: `GradientText`, `SectionTitle`, `Badge` (purple/teal/yellow, sm/md, `code`), `Button` polimórfico (`<button>`/`<a>`/`Link`; variants primary/secondary/ghost; `gradient` brand/purple/teal/teal-purple; `accent` purple/teal/neutral; `size` xs/sm/md). `Card`/`IconTile` **adiados para a Fase 4** — cards são animados (`motion`)/`Link` e bespoke; harmonizar junto com a responsividade
-- 🟡 Refatorar seções → cabeçalhos produtos/mvv/IA usam `SectionTitle`; hero/IA usam `GradientText`; CTAs do hero, submit do footer e **todos os CTAs das páginas de produto** usam `Button` (gradientes temáticos preservados); tags/pills usam `Badge`. **Navbar mantido bespoke** de propósito (CTA compacto; `hover:scale` causaria layout shift na barra fixa). Falta quem-somos (será tratado na Fase 4)
+- 🟡 Refatorar seções → cabeçalhos produtos/mvv/IA usam `SectionTitle`; hero/IA usam `GradientText`; CTAs do hero, submit do footer e **todos os CTAs das páginas de produto** usam `Button` (gradientes temáticos preservados); tags/pills usam `Badge`. **Navbar mantido bespoke** de propósito (CTA compacto; `hover:scale` causaria layout shift na barra fixa). quem-somos mantém layout assimétrico intencional (não usa SectionTitle), auditado e responsivo OK
 
 ### Fase 2 — Documentação
 
@@ -77,11 +77,11 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 - ⬜ **Espaçamento fluido** com `clamp()` — padding de seção e gaps adaptáveis
 - ✅ **Unidades de viewport modernas** — Hero migrado de `min-h-screen` para `min-h-dvh`
 - ✅ **`text-wrap: balance`** em todos os títulos (regra base `h1–h6`); `pretty` em parágrafos longos pendente
-- ⬜ **Grids fluidos** (`auto-fit` + `minmax`) onde fizer sentido
+- ✅ **Grids** avaliados — mantidas colunas controladas (itens fixos 3/6); `auto-fit` criaria layouts desbalanceados (ex.: 5+1) no ultrawide, sem ganho
 - ✅ **Ultrawide** — utilitário `.container-brand` substituiu os 16 `max-w-7xl`; alarga de 80rem para 90rem (1440px) em telas ≥1536px
 - 🟡 `next/image` com `sizes` — mascote já com `sizes` ✅; logo/monograma são pequenos/decorativos
 - ✅ Auditoria mobile/tablet: **sem overflow horizontal**; produtos/quem-somos empilham corretamente; corrigido o **colapso/CLS do mascote** (wrapper sem largura definida → `w-full max-w-[540px]`)
-- ⬜ Botão flutuante de WhatsApp não cobrir conteúdo importante no mobile
+- ✅ Botão de WhatsApp: espaço inferior reservado no mobile (créditos saem de baixo do botão); confirmado que não cobre elementos interativos
 
 ### Fase 5 — Acessibilidade & performance
 

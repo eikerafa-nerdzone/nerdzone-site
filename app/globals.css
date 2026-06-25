@@ -74,6 +74,14 @@ h1, h2, h3, h4, h5, h6 {
 .text-fluid-h1 { font-size: clamp(2.25rem, 1.25rem + 4.2vw, 4.5rem); }
 .text-fluid-h2 { font-size: clamp(1.875rem, 0.9rem + 3.2vw, 3.5rem); }
 
+/* ─── Visible keyboard focus ───────────────────────────────────── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--brand-teal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* ─── Brand utilities ───────────────────────────────────────── */
 .gradient-text {
   background: var(--brand-gradient);

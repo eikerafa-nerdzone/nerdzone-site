@@ -52,56 +52,76 @@ function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
+          <label htmlFor="contact-name" className="sr-only">Nome</label>
           <input
             {...register("name")}
+            id="contact-name"
             type="text"
+            autoComplete="name"
             placeholder="Seu nome *"
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? "contact-name-error" : undefined}
             className={inputClass(!!errors.name)}
           />
           {errors.name && (
-            <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>
+            <p id="contact-name-error" role="alert" className="text-red-400 text-xs mt-1">{errors.name.message}</p>
           )}
         </div>
         <div>
+          <label htmlFor="contact-email" className="sr-only">E-mail</label>
           <input
             {...register("email")}
+            id="contact-email"
             type="email"
+            autoComplete="email"
             placeholder="Seu e-mail *"
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "contact-email-error" : undefined}
             className={inputClass(!!errors.email)}
           />
           {errors.email && (
-            <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>
+            <p id="contact-email-error" role="alert" className="text-red-400 text-xs mt-1">{errors.email.message}</p>
           )}
         </div>
       </div>
 
       <div>
+        <label htmlFor="contact-phone" className="sr-only">Telefone / WhatsApp</label>
         <input
           {...register("phone")}
+          id="contact-phone"
           type="tel"
+          autoComplete="tel"
           placeholder="Telefone / WhatsApp *"
+          aria-invalid={!!errors.phone}
+          aria-describedby={errors.phone ? "contact-phone-error" : undefined}
           className={inputClass(!!errors.phone)}
         />
         {errors.phone && (
-          <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>
+          <p id="contact-phone-error" role="alert" className="text-red-400 text-xs mt-1">{errors.phone.message}</p>
         )}
       </div>
 
       <div>
+        <label htmlFor="contact-message" className="sr-only">Mensagem</label>
         <textarea
           {...register("message")}
+          id="contact-message"
           rows={4}
           placeholder="Como podemos ajudar? *"
+          aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? "contact-message-error" : undefined}
           className={`${inputClass(!!errors.message)} resize-none`}
         />
         {errors.message && (
-          <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>
+          <p id="contact-message-error" role="alert" className="text-red-400 text-xs mt-1">{errors.message.message}</p>
         )}
       </div>
 
       {/* Status messages */}
       {status === "success" && (
         <motion.div
+          role="status"
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center gap-2 text-brand-teal text-sm"
@@ -112,6 +132,7 @@ function ContactForm() {
       )}
       {status === "error" && (
         <motion.div
+          role="alert"
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center gap-2 text-red-400 text-sm"

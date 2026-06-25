@@ -39,7 +39,7 @@ consistência de componentes e responsividade — preservando a identidade visua
 - **SEO / metadata** — base pronta (title/template, keywords, OpenGraph, Twitter, metadataBase); falta copy mais forte e imagem OG 1200×630 real (hoje usa o logo 256×256)
 - **Tokens de marca** — cores e tokens de gradiente (`--brand-gradient` 90°, `--brand-gradient-bg` 135°) centralizados; `.gradient-text` e `.gradient-bg` criadas e aplicadas (hero, IA, botões do hero/footer); faltam `.glass-card` / `.brand-glow` / `.section-padding` / `.container-default`; gradientes próprios dos botões das páginas de produto ainda inline
 - **Assets** — favicon = monograma ok; falta convenção de nomes (logo horizontal, og-image) e remover os SVGs órfãos do create-next-app
-- **Acessibilidade do formulário** — inputs apenas com `placeholder`; faltam `<label>` reais e `aria-describedby` ligando o erro ao campo
+- **Acessibilidade do formulário** ✅ — `<label>` reais (sr-only), `aria-invalid`/`aria-describedby` ligando erros aos campos, `role="alert/status"`, `autocomplete`
 
 ---
 
@@ -86,7 +86,7 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 
 ### Fase 5 — Acessibilidade & performance
 
-- ⬜ Acessibilidade: `<label>` reais no formulário, `aria-describedby` nos erros, foco visível (`focus-visible`), contraste adequado (`aria-label` em ícones já parcialmente feito)
+- ✅ Acessibilidade: `<label>` reais (sr-only) + `aria-invalid`/`aria-describedby` nos erros + `role="alert/status"` + `autocomplete` no form; foco visível (`focus-visible`) em links/botões; `aria-label` em ícones já existente
 - ⬜ Performance: peso das imagens-fonte (mascote 1.8MB, monograma 1.3MB), `MatrixRain` com `setInterval` 40ms contínuo (avaliar `requestAnimationFrame`, pausar fora da viewport e respeitar `prefers-reduced-motion`), excesso de glows/shadows, revisão das animações do Framer Motion
 - ⬜ Limpeza: remover SVGs órfãos do create-next-app em `public/` (`file`, `globe`, `next`, `vercel`, `window`)
 

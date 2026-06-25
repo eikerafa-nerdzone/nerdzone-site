@@ -57,7 +57,7 @@ Reduz duplicação e destrava a consistência das demais frentes.
 ### Fase 2 — Documentação
 
 - ✅ `README.md` reescrito: descrição, objetivo, stack, como rodar / env / scripts / deploy, estrutura de pastas, identidade visual (paleta com lime), convenções de componentes, roadmap. URL canônica `nerdzone-site.vercel.app` aplicada no `siteConfig.url`
-- ⬜ `docs/brand-system.md`: paleta, tipografia, uso do logo, gradiente, estilo de cards/botões/ícones, uso do mascote e exemplos de aplicação
+- ✅ `docs/brand-system.md`: paleta (com lime), tipografia, gradiente, logo/monograma, mascote e os primitivos UI com exemplos
 
 ### Fase 3 — SEO & social
 

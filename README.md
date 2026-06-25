@@ -83,7 +83,7 @@ public/
 
 ## Identidade visual
 
-Base **dark premium** com gradiente roxo → verde água e destaque lime. Tokens em [`app/globals.css`](app/globals.css).
+Base **dark premium** com gradiente roxo → verde água e destaque lime. Tokens em [`app/globals.css`](app/globals.css). Referência completa do design system em [`docs/brand-system.md`](docs/brand-system.md).
 
 | Token | Cor | Uso |
 |---|---|---|

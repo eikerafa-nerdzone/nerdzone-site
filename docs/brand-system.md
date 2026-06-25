@@ -58,7 +58,7 @@ Todos os headings (`h1`–`h6`) herdam Space Grotesk via regra base. Para títul
 
 ## Mascote
 
-[`public/images/mascote-nerdzone.png`](../public/images/mascote-nerdzone.png) — ilustração semi-realista tech, usada na seção Quem Somos. Representa a essência: inteligência, criatividade e foco em soluções reais.
+[`public/images/mascote-nerdzone.webp`](../public/images/mascote-nerdzone.webp) — ilustração semi-realista tech, usada na seção Quem Somos. Representa a essência: inteligência, criatividade e foco em soluções reais.
 
 ## Componentes de UI (`components/ui/`)
 

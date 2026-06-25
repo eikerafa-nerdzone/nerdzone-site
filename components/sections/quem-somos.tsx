@@ -60,10 +60,10 @@ export function QuemSomos() {
                 aria-hidden="true"
               />
               <Image
-                src="/images/mascote-nerdzone.png"
+                src="/images/mascote-nerdzone.webp"
                 alt="Mascote oficial Nerdzone — desenvolvedor com mindset de engenharia"
-                width={1382}
-                height={1138}
+                width={1080}
+                height={889}
                 sizes="(max-width: 1024px) 100vw, 540px"
                 className="relative z-10 w-full h-auto rounded-2xl border border-white/10 shadow-2xl"
               />

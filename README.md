@@ -98,7 +98,7 @@ Base **dark premium** com gradiente roxo → verde água e destaque lime. Tokens
 
 - **Gradiente:** `--brand-gradient` (90°, texto) e `--brand-gradient-bg` (135°, superfícies); utilitárias `.gradient-text` / `.gradient-bg`.
 - **Tipografia:** títulos em **Space Grotesk** (regra base `h1–h6` + utilitária `font-display`); interface/texto em **Geist**; código em **Geist Mono**.
-- **Mascote:** ilustração semi-realista tech em [`public/images/mascote-nerdzone.png`](public/images/mascote-nerdzone.png).
+- **Mascote:** ilustração semi-realista tech em [`public/images/mascote-nerdzone.webp`](public/images/mascote-nerdzone.webp).
 
 ## Convenções de componentes
 

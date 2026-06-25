@@ -16,26 +16,28 @@ function MatrixRain() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
+    const fontSize = 13
+    let columns = 0
+    let drops: number[] = []
+
     const resize = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
+      columns = Math.floor(canvas.width / fontSize)
+      drops = Array(columns).fill(1)
     }
     resize()
-
-    const fontSize = 13
-    let columns = Math.floor(canvas.width / fontSize)
-    let drops: number[] = Array(columns).fill(1)
 
     const chars = "01"
 
     const draw = () => {
       ctx.fillStyle = "rgba(25, 36, 47, 0.06)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.font = `${fontSize}px monospace`
 
       for (let i = 0; i < drops.length; i++) {
         const opacity = Math.random() > 0.5 ? 1 : 0.4
         ctx.fillStyle = `rgba(10, 205, 173, ${opacity * 0.6})`
-        ctx.font = `${fontSize}px monospace`
         const char = chars[Math.floor(Math.random() * chars.length)]
         ctx.fillText(char, i * fontSize, drops[i] * fontSize)
 
@@ -46,17 +48,46 @@ function MatrixRain() {
       }
     }
 
-    const interval = setInterval(draw, 40)
-
-    const onResize = () => {
-      resize()
-      columns = Math.floor(canvas.width / fontSize)
-      drops = Array(columns).fill(1)
+    // Respect reduced motion: render a single static frame, no animation.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      draw()
+      return
     }
+
+    // Throttled rAF (~25fps), paused while the hero is off-screen.
+    let raf = 0
+    let last = 0
+    const frameMs = 40
+
+    const loop = (t: number) => {
+      if (t - last >= frameMs) {
+        last = t
+        draw()
+      }
+      raf = requestAnimationFrame(loop)
+    }
+    const start = () => {
+      if (!raf) raf = requestAnimationFrame(loop)
+    }
+    const stop = () => {
+      if (raf) {
+        cancelAnimationFrame(raf)
+        raf = 0
+      }
+    }
+
+    const io = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? start() : stop()),
+      { threshold: 0 },
+    )
+    io.observe(canvas)
+
+    const onResize = () => resize()
     window.addEventListener("resize", onResize, { passive: true })
 
     return () => {
-      clearInterval(interval)
+      stop()
+      io.disconnect()
       window.removeEventListener("resize", onResize)
     }
   }, [])

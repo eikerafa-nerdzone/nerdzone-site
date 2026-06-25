@@ -87,8 +87,8 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 ### Fase 5 — Acessibilidade & performance
 
 - ✅ Acessibilidade: `<label>` reais (sr-only) + `aria-invalid`/`aria-describedby` nos erros + `role="alert/status"` + `autocomplete` no form; foco visível (`focus-visible`) em links/botões; `aria-label` em ícones já existente
-- ⬜ Performance: peso das imagens-fonte (mascote 1.8MB, monograma 1.3MB), `MatrixRain` com `setInterval` 40ms contínuo (avaliar `requestAnimationFrame`, pausar fora da viewport e respeitar `prefers-reduced-motion`), excesso de glows/shadows, revisão das animações do Framer Motion
-- ⬜ Limpeza: remover SVGs órfãos do create-next-app em `public/` (`file`, `globe`, `next`, `vercel`, `window`)
+- ✅ Performance: `MatrixRain` migrado para `requestAnimationFrame` throttled (~25fps) + `IntersectionObserver` (pausa fora da viewport) + `prefers-reduced-motion`; mascote **1.74MB PNG → 84KB WebP** (otimizador serve ~50KB). Monograma 1.3MB permanece como source só de build (gera favicon/apple-icon, não é servido)
+- ✅ Limpeza: removidos os SVGs órfãos do create-next-app em `public/` (`file`, `globe`, `next`, `vercel`, `window`)
 
 ---
 

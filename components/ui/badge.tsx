@@ -1,13 +1,13 @@
 import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 
-type Accent = "purple" | "teal" | "yellow"
+type Accent = "purple" | "teal" | "lime"
 type Size = "sm" | "md"
 
 const accentClass: Record<Accent, string> = {
   purple: "bg-brand-purple/15 text-brand-purple border-brand-purple/30",
   teal: "bg-brand-teal/15 text-brand-teal border-brand-teal/30",
-  yellow: "bg-brand-yellow/15 text-brand-yellow border-brand-yellow/30",
+  lime: "bg-brand-accent/15 text-brand-accent border-brand-accent/30",
 }
 
 const sizeClass: Record<Size, string> = {

@@ -1,12 +1,12 @@
 import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 
-type Accent = "teal" | "purple" | "yellow"
+type Accent = "teal" | "purple" | "lime"
 
 const eyebrowColor: Record<Accent, string> = {
   teal: "text-brand-teal",
   purple: "text-brand-purple",
-  yellow: "text-brand-yellow",
+  lime: "text-brand-accent",
 }
 
 /** Cabeçalho de seção padrão: eyebrow + título + descrição, centralizado. */

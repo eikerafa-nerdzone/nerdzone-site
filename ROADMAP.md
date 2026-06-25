@@ -24,7 +24,7 @@ consistência de componentes e responsividade — preservando a identidade visua
 
 - Paleta oficial centralizada em tokens (`app/globals.css`)
 - Tipografia: Space Grotesk em todos os títulos (regra base `h1..h6` + token `--font-display`)
-- Amarelo padronizado no token oficial `#ffb300` (removido o `amber-400` do Tailwind)
+- Cor de destaque: token `brand-accent` = `#ccff00` (lime) — substituiu o amber `#ffb300`; contraste ajustado (ícone escuro sobre o lime nos tiles do MVV)
 - Mascote oficial na seção Quem Somos (`next/image`, responsivo, moldura premium)
 - Badges no estilo `</>` do kit nas tags de produto
 - Favicon e apple-icon gerados a partir do monograma (convenção de arquivo do Next 16)
@@ -91,11 +91,11 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 
 ---
 
-## Decisões pendentes (produto / design)
+## Decisões (resolvidas)
 
-- **Tom textual** — manter "Nerds apaixonados por tecnologia" (calor/identidade), adotar tom mais corporativo, ou um meio-termo
-- **Uso do amarelo** — reduzir como cor principal (afeta a seção MVV) ou manter o peso atual
-- **URL canônica** — `nerdzone.com.br` (atual no `siteConfig`) vs. `nerdzone-site.vercel.app`; inclui anexar o domínio custom na Vercel e configurar DNS
+- **Tom textual** → meio-termo (personalidade nerd + clareza de negócio) — aplicar na copy na Fase 2
+- **Cor de destaque** → trocada de `#ffb300` para `#ccff00` (lime), token `brand-accent` ✅
+- **URL canônica** → `nerdzone-site.vercel.app` — aplicar em `siteConfig.url` + README/SEO na Fase 2 (e-mail segue `@nerdzone.com.br`)
 
 ## Processo
 

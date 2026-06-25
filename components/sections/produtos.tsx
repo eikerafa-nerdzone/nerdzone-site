@@ -91,7 +91,7 @@ export function Produtos() {
                     <Badge accent={produto.color as "purple" | "teal"} code>
                       {produto.tagline}
                     </Badge>
-                    <Badge accent="yellow" icon={<Sparkles size={10} />}>
+                    <Badge accent="lime" icon={<Sparkles size={10} />}>
                       Orquestração de IA
                     </Badge>
                   </div>

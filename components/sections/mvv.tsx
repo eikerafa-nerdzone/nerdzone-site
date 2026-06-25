@@ -37,12 +37,12 @@ export function MVV() {
         >
           <SectionTitle
             eyebrow="Nossa essência"
-            accent="yellow"
+            accent="lime"
             title="Mundo Nerdzone"
             description={
               <>
                 Esse é o nosso mundo e nossa{" "}
-                <span className="text-brand-yellow font-medium">Filosofia Dimensional</span>
+                <span className="text-brand-accent font-medium">Filosofia Dimensional</span>
               </>
             }
           />
@@ -60,21 +60,21 @@ export function MVV() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="group relative p-8 rounded-2xl border border-white/5 bg-white/3 hover:border-brand-yellow/30 hover:bg-brand-yellow/3 transition-all duration-300 overflow-hidden"
+                className="group relative p-8 rounded-2xl border border-white/5 bg-white/3 hover:border-brand-accent/30 hover:bg-brand-accent/3 transition-all duration-300 overflow-hidden"
               >
                 {/* Background glow on hover */}
                 <div
                   className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(ellipse at top left, rgba(255,179,0,0.08) 0%, transparent 70%)",
+                      "radial-gradient(ellipse at top left, rgba(204,255,0,0.10) 0%, transparent 70%)",
                   }}
                   aria-hidden="true"
                 />
 
                 {/* Icon */}
-                <div className="w-16 h-16 rounded-2xl bg-brand-yellow flex items-center justify-center mb-6 shadow-lg shadow-brand-yellow/20 group-hover:scale-110 transition-transform duration-300">
-                  {Icon && <Icon size={28} className="text-white" strokeWidth={1.5} />}
+                <div className="w-16 h-16 rounded-2xl bg-brand-accent flex items-center justify-center mb-6 shadow-lg shadow-brand-accent/20 group-hover:scale-110 transition-transform duration-300">
+                  {Icon && <Icon size={28} className="text-brand-darker" strokeWidth={2} />}
                 </div>
 
                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
@@ -84,7 +84,7 @@ export function MVV() {
                 <div
                   className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
-                    background: "linear-gradient(90deg, transparent, #ffb300, transparent)",
+                    background: "linear-gradient(90deg, transparent, #ccff00, transparent)",
                   }}
                   aria-hidden="true"
                 />

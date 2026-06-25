@@ -80,7 +80,7 @@ export function IaOrquestracao() {
         >
           <SectionTitle
             eyebrow="Metodologia"
-            accent="yellow"
+            accent="lime"
             icon={<Sparkles size={14} />}
             title={
               <>
@@ -134,9 +134,9 @@ export function IaOrquestracao() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left"
         >
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-brand-yellow/20 bg-brand-yellow/5">
-            <span className="w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
-            <span className="text-brand-yellow text-sm font-medium">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-brand-accent/20 bg-brand-accent/5">
+            <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
+            <span className="text-brand-accent text-sm font-medium">
               Cada entrega passa por revisão adversarial antes do PR
             </span>
           </div>

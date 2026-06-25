@@ -8,8 +8,7 @@
   --brand-teal-dark: #089e86;
   --brand-dark:    #19242f;
   --brand-darker:  #111820;
-  --brand-yellow:  #ffb300;
-  --brand-yellow-dark: #d99700;
+  --brand-accent:  #ccff00;
   --brand-gradient: linear-gradient(90deg, #652afb, #0acdad);
   --brand-gradient-bg: linear-gradient(135deg, #652afb, #0acdad);
 }
@@ -28,8 +27,7 @@
   --color-brand-teal-dark:   #089e86;
   --color-brand-dark:        #19242f;
   --color-brand-darker:      #111820;
-  --color-brand-yellow:      #ffb300;
-  --color-brand-yellow-dark: #d99700;
+  --color-brand-accent:      #ccff00;
 }
 
 /* ─── Base ──────────────────────────────────────────────────── */

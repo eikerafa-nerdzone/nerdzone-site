@@ -79,8 +79,8 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 - ✅ **`text-wrap: balance`** em todos os títulos (regra base `h1–h6`); `pretty` em parágrafos longos pendente
 - ⬜ **Grids fluidos** (`auto-fit` + `minmax`) onde fizer sentido
 - ✅ **Ultrawide** — utilitário `.container-brand` substituiu os 16 `max-w-7xl`; alarga de 80rem para 90rem (1440px) em telas ≥1536px
-- ⬜ `next/image` com `sizes` adequados por breakpoint
-- ⬜ Auditoria por seção × breakpoint: Navbar (menu mobile), Hero, Quem Somos (mascote sem sobrepor texto), MVV, IA, Produtos (empilhamento), Footer/formulário, páginas de produto
+- 🟡 `next/image` com `sizes` — mascote já com `sizes` ✅; logo/monograma são pequenos/decorativos
+- ✅ Auditoria mobile/tablet: **sem overflow horizontal**; produtos/quem-somos empilham corretamente; corrigido o **colapso/CLS do mascote** (wrapper sem largura definida → `w-full max-w-[540px]`)
 - ⬜ Botão flutuante de WhatsApp não cobrir conteúdo importante no mobile
 
 ### Fase 5 — Acessibilidade & performance

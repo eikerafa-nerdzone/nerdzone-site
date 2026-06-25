@@ -49,7 +49,7 @@ export function QuemSomos() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="flex justify-center lg:justify-start"
           >
-            <div className="relative">
+            <div className="relative w-full max-w-[540px]">
               {/* Soft brand glow behind the mascot */}
               <div
                 className="absolute -inset-4 rounded-3xl blur-2xl opacity-30"
@@ -64,7 +64,8 @@ export function QuemSomos() {
                 alt="Mascote oficial Nerdzone — desenvolvedor com mindset de engenharia"
                 width={1382}
                 height={1138}
-                className="relative z-10 w-full h-auto max-w-[540px] rounded-2xl border border-white/10 shadow-2xl"
+                sizes="(max-width: 1024px) 100vw, 540px"
+                className="relative z-10 w-full h-auto rounded-2xl border border-white/10 shadow-2xl"
               />
             </div>
           </motion.div>

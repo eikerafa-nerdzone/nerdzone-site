@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowLeft, Check, Users, Code2, Palette, Database, Smartphone, Shield, ExternalLink } from "lucide-react"
+import Image from "next/image"
+import { ArrowLeft, Check, Code2, Palette, Database, Smartphone, Shield, ExternalLink } from "lucide-react"
 import { siteConfig } from "@/lib/constants"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -87,25 +88,23 @@ export default function OutsourcingPage() {
             </div>
           </div>
 
-          {/* Visual */}
-          <div
-            className="relative h-80 lg:h-96 rounded-2xl border border-brand-teal/20 flex items-center justify-center overflow-hidden"
-            style={{
-              background: "linear-gradient(135deg, rgba(10,205,173,0.1) 0%, rgba(101,42,251,0.05) 100%)",
-            }}
-          >
-            <div className="text-center">
-              <Users size={64} className="text-brand-teal/40 mx-auto mb-4" />
-              <p className="text-gray-500 text-sm">Sua equipe, nossa curadoria</p>
-            </div>
+          {/* Team photo */}
+          <div className="relative">
             <div
-              className="absolute inset-0 opacity-10"
+              className="absolute -inset-3 rounded-3xl blur-2xl opacity-25"
               style={{
-                backgroundImage:
-                  "linear-gradient(rgba(10,205,173,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(10,205,173,0.5) 1px, transparent 1px)",
-                backgroundSize: "40px 40px",
+                background:
+                  "radial-gradient(ellipse at center, rgba(10,205,173,0.4) 0%, transparent 70%)",
               }}
               aria-hidden="true"
+            />
+            <Image
+              src="/images/equipe-nerdzone.webp"
+              alt="Equipe Nerdzone — desenvolvedores, designers e analistas"
+              width={1200}
+              height={675}
+              sizes="(max-width: 1024px) 100vw, 600px"
+              className="relative z-10 w-full h-auto rounded-2xl border border-brand-teal/20 shadow-2xl"
             />
           </div>
         </div>

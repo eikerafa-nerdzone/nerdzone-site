@@ -93,7 +93,7 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 ### Fase 5 — itens adicionais (solicitados em 2026-06-26)
 
 - ✅ Footer: adicionar "Solutions" ao wordmark (estava só "Nerdzone")
-- ⬜ Adicionar "AI" (Artificial Intelligence) ao logo em todo o site. Assets `Ai-degrade/roxo/verde.png` têm **fundo branco/sólido** (não servem para overlay no tema escuro) → tratar como texto em gradiente ou pedir PNG transparente
+- ✅ "AI" (Artificial Intelligence) adicionado ao logo (navbar + footer), pequeno e flutuando ao final de "Nerdzone Solutions". Usa `logo-ai.webp` (recorte transparente otimizado do `Ai-degrade.png` ajustado pelo usuário; trim + downscale para suavizar, 5.7KB)
 - ⬜ Links corretos de YouTube, LinkedIn e Instagram (depende das URLs reais do usuário)
 - ✅ **Decoração temática Copa do Mundo** (sutil) — ⚽ no logo (navbar + footer) e nos créditos, tudo atrás do flag `worldCupTheme` em `lib/constants.ts`. **Remoção agendada para 2026-07-20** (tarefa "remover-tema-copa-mundo" define `worldCupTheme = false`)
 - ✅ Imagem da equipe na página de Outsourcing — placeholder substituído pela foto da equipe (`equipe-nerdzone.webp`, otimizada de 2MB → 103KB), `next/image` responsivo com `sizes` e moldura

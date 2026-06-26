@@ -193,6 +193,19 @@ export function Footer() {
                   Nerd<span className="text-brand-teal">zone</span>{" "}
                   <span className="gradient-text">Solutions</span>
                 </span>
+                <motion.span
+                  className="inline-flex"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Image
+                    src="/images/logo-ai.webp"
+                    alt="AI"
+                    width={93}
+                    height={72}
+                    className="h-6 w-auto"
+                  />
+                </motion.span>
                 {worldCupTheme && (
                   <span className="text-xl leading-none" aria-hidden="true" title="No clima da Copa 2026">
                     ⚽

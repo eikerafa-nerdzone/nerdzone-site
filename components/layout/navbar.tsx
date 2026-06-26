@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { navLinks, siteConfig } from "@/lib/constants"
+import { navLinks, siteConfig, worldCupTheme } from "@/lib/constants"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -78,6 +78,11 @@ export function Navbar() {
                   Solutions
                 </motion.span>
               </motion.span>
+              {worldCupTheme && (
+                <span className="text-base leading-none" aria-hidden="true" title="No clima da Copa 2026">
+                  ⚽
+                </span>
+              )}
             </Link>
 
             {/* Desktop links */}

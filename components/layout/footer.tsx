@@ -7,7 +7,7 @@ import { motion, useInView } from "framer-motion"
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { siteConfig, navLinks } from "@/lib/constants"
+import { siteConfig, navLinks, worldCupTheme } from "@/lib/constants"
 import { contactSchema, type ContactFormData } from "@/lib/validations"
 import { Button } from "@/components/ui/button"
 
@@ -193,6 +193,11 @@ export function Footer() {
                   Nerd<span className="text-brand-teal">zone</span>{" "}
                   <span className="gradient-text">Solutions</span>
                 </span>
+                {worldCupTheme && (
+                  <span className="text-xl leading-none" aria-hidden="true" title="No clima da Copa 2026">
+                    ⚽
+                  </span>
+                )}
               </div>
 
               <p className="text-gray-400 leading-relaxed mb-8 max-w-sm">
@@ -310,7 +315,7 @@ export function Footer() {
             © {new Date().getFullYear()} Nerdzone Solutions. Todos os direitos reservados.
           </p>
           <p className="text-gray-600 text-xs">
-            Feito com ☕ e muito código
+            Feito com ☕ e muito código{worldCupTheme && " ⚽"}
           </p>
         </div>
       </div>

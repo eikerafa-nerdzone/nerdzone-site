@@ -90,6 +90,13 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 - ✅ Performance: `MatrixRain` migrado para `requestAnimationFrame` throttled (~25fps) + `IntersectionObserver` (pausa fora da viewport) + `prefers-reduced-motion`; mascote **1.74MB PNG → 84KB WebP** (otimizador serve ~50KB). Monograma 1.3MB permanece como source só de build (gera favicon/apple-icon, não é servido)
 - ✅ Limpeza: removidos os SVGs órfãos do create-next-app em `public/` (`file`, `globe`, `next`, `vercel`, `window`)
 
+### Fase 5 — itens adicionais (solicitados em 2026-06-26)
+
+- ✅ Footer: adicionar "Solutions" ao wordmark (estava só "Nerdzone")
+- ⬜ Adicionar "AI" (Artificial Intelligence) ao logo em todo o site. Assets `Ai-degrade/roxo/verde.png` têm **fundo branco/sólido** (não servem para overlay no tema escuro) → tratar como texto em gradiente ou pedir PNG transparente
+- ⬜ Links corretos de YouTube, LinkedIn e Instagram (depende das URLs reais do usuário)
+- ⬜ **Decoração temática Copa do Mundo** (futebol masculino) no logo e em partes do site — **temporária**, remover tudo ao encerrar (final ~2026-07-19); implementar isolada/fácil de remover
+
 ---
 
 ## Decisões (resolvidas)

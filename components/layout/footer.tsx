@@ -190,7 +190,8 @@ export function Footer() {
                   className="rounded-xl"
                 />
                 <span className="font-display text-2xl font-bold text-white">
-                  Nerd<span className="text-brand-teal">zone</span>
+                  Nerd<span className="text-brand-teal">zone</span>{" "}
+                  <span className="gradient-text">Solutions</span>
                 </span>
               </div>
 

@@ -195,7 +195,7 @@ export function Footer() {
               </div>
 
               <p className="text-gray-400 leading-relaxed mb-8 max-w-sm">
-                Nerds apaixonados por tecnologia que transformam ideias em soluções digitais reais.
+                Engenharia de software com alma nerd — transformamos ideias em soluções digitais que resolvem problemas reais.
               </p>
 
               {/* Contact info */}

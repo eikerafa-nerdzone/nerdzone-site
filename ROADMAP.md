@@ -63,7 +63,7 @@ Reduz duplicação e destrava a consistência das demais frentes.
 ### Fase 3 — SEO & social
 
 - ✅ Imagem Open Graph 1200×630 gerada por código (`app/opengraph-image.tsx` com `ImageResponse`, build-time); alimenta og:image e twitter:image. Removidos os `images` manuais do metadata
-- 🟡 `keywords` reforçados ✅; `description` ainda atrelada à copy (será revista no ajuste de tom meio-termo)
+- ✅ `keywords` reforçados; `description` reescrita no tom meio-termo
 - ✅ URL canônica `nerdzone-site.vercel.app` aplicada (Fase 2)
 
 ### Fase 4 — Responsividade total (adaptação completa por dispositivo) ⭐
@@ -94,7 +94,7 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 
 ## Decisões (resolvidas)
 
-- **Tom textual** → meio-termo (personalidade nerd + clareza de negócio) — aplicar na copy na Fase 2
+- **Tom textual** → meio-termo **aplicado** ✅ (descrição/meta, título e parágrafos do Quem Somos, descrição do footer)
 - **Cor de destaque** → trocada de `#ffb300` para `#ccff00` (lime), token `brand-accent` ✅
 - **URL canônica** → `nerdzone-site.vercel.app` — aplicar em `siteConfig.url` + README/SEO na Fase 2 (e-mail segue `@nerdzone.com.br`)
 

@@ -81,21 +81,21 @@ export function QuemSomos() {
             </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Nerds que trabalham para tornar o mundo mais{" "}
-              <span className="text-brand-teal">aberto</span>
+              Nerds por paixão, engenheiros por ofício — focados em{" "}
+              <span className="text-brand-teal">resultado</span>
             </h2>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              Nascemos da paixão por linhas de código e da insatisfação com oportunidades ilusórias.
-              Abrimos mão da estabilidade para correr riscos e construir algo que realmente importa
-              — soluções digitais que conectam pessoas, empresas e possibilidades.
+              Nascemos da paixão por código e da vontade de construir o que realmente importa.
+              Trocamos a estabilidade pelo risco de criar software de verdade — soluções digitais
+              que conectam pessoas, empresas e oportunidades de negócio.
             </p>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-10">
-              Aplique o{" "}
-              <strong className="text-brand-purple">Algoritmo Nerdzone</strong> em seu projeto e
-              sua solução será desenvolvida sob medida, alcançando a qualidade e excelência que
-              você merece. Feito é melhor do que perfeito — mas feito com excelência é o ideal.
+              Com o{" "}
+              <strong className="text-brand-purple">Algoritmo Nerdzone</strong>, seu projeto é
+              desenvolvido sob medida, com a engenharia, a qualidade e a excelência que o seu
+              negócio merece. Feito é melhor que perfeito — mas feito com excelência é o ideal.
             </p>
 
             {/* Highlight cards */}

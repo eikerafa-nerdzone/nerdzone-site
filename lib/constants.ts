@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Nerdzone Solutions",
   tagline: "Desenvolvendo para conectar você",
   description:
-    "Nerds apaixonados por tecnologia que transformam ideias em soluções digitais reais. Outsourcing de profissionais e o ERPSystem para sua empresa.",
+    "Engenharia de software com alma nerd: unimos código, produto e IA para transformar ideias em soluções digitais que resolvem problemas reais de negócio. Outsourcing de talentos e o ERPSystem para a sua empresa.",
   url: "https://nerdzone-site.vercel.app",
   email: "contato@nerdzone.com.br",
   whatsapp: "5511939117113",

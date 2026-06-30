@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { navLinks, siteConfig, worldCupTheme } from "@/lib/constants"
+import { navLinks, siteConfig } from "@/lib/constants"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -84,18 +84,13 @@ export function Navbar() {
                 transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
               >
                 <Image
-                  src="/images/logo-ai.webp"
+                  src="/images/logo-ai-verde.webp"
                   alt="AI"
-                  width={93}
-                  height={72}
-                  className="h-1.5 w-auto"
+                  width={101}
+                  height={96}
+                  style={{ height: "6.6px", width: "auto" }}
                 />
               </motion.span>
-              {worldCupTheme && (
-                <span className="text-base leading-none" aria-hidden="true" title="No clima da Copa 2026">
-                  ⚽
-                </span>
-              )}
             </Link>
 
             {/* Desktop links */}

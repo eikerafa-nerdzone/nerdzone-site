@@ -9,6 +9,7 @@ export const siteConfig = {
   whatsappMessage: "Olá! Vim pelo site da Nerdzone e gostaria de saber mais.",
   linkedin: "https://linkedin.com/company/nerdzone-solutions",
   instagram: "https://instagram.com/nerdzone.solutions",
+  youtube: "https://www.youtube.com/@NerdzoneIA",
 }
 
 /** Tema temporário da Copa do Mundo 2026. Remover ao encerrar (~2026-07-19): basta `false`. */

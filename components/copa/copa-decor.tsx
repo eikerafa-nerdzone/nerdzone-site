@@ -9,17 +9,22 @@ export function CopaDecor() {
       className="pointer-events-none fixed inset-0 z-20 overflow-hidden"
       aria-hidden="true"
     >
-      {/* Top: bunting "2026" — strip below navbar, full width */}
-      <div className="absolute top-20 inset-x-0 flex justify-center">
+      {/* Upper-right corner: bunting "2026" — diagonal, anchored at top-right */}
+      <motion.div
+        className="absolute top-0 right-0"
+        style={{ transformOrigin: "top right" }}
+        initial={{ rotate: -18 }}
+        animate={{ rotate: [-18, -15, -18], y: [0, -3, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      >
         <Image
           src="/images/copa-8.webp"
           alt=""
-          width={1086}
-          height={362}
-          className="w-full max-w-5xl opacity-50"
-          style={{ maxHeight: 70, objectFit: "contain", objectPosition: "center top" }}
+          width={724}
+          height={241}
+          className="w-64 sm:w-80 h-auto"
         />
-      </div>
+      </motion.div>
 
       {/* Right — 32% from top: Brazilian ball "2026" */}
       <motion.div

@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { navLinks, siteConfig } from "@/lib/constants"
+import { navLinks, siteConfig, worldCupTheme } from "@/lib/constants"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -45,7 +45,7 @@ export function Navbar() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2.5 group"
+              className="flex items-center gap-2.5 group relative"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <Image
@@ -91,6 +91,21 @@ export function Navbar() {
                   style={{ height: "6.6px", width: "auto" }}
                 />
               </motion.span>
+              {worldCupTheme && (
+                <motion.div
+                  className="absolute -top-4 left-4 pointer-events-none"
+                  animate={{ y: [0, -10, 0], rotate: [-12, 0, -12] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Image
+                    src="/images/copa-3.webp"
+                    alt=""
+                    width={65}
+                    height={65}
+                    className="w-10 sm:w-12 h-auto opacity-75"
+                  />
+                </motion.div>
+              )}
             </Link>
 
             {/* Desktop links */}

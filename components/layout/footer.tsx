@@ -194,8 +194,8 @@ export function Footer() {
                   <span className="gradient-text">Solutions</span>
                 </span>
                 <motion.span
-                  className="inline-flex"
-                  animate={{ y: [0, -3, 0] }}
+                  className="inline-flex -ml-3"
+                  animate={{ y: [0, -1.5, 0] }}
                   transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <Image
@@ -203,7 +203,7 @@ export function Footer() {
                     alt="AI"
                     width={93}
                     height={72}
-                    className="h-6 w-auto"
+                    className="h-1.5 w-auto"
                   />
                 </motion.span>
                 {worldCupTheme && (

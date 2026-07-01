@@ -7,7 +7,7 @@ import { motion, useInView } from "framer-motion"
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { siteConfig, navLinks } from "@/lib/constants"
+import { siteConfig, navLinks, worldCupTheme } from "@/lib/constants"
 import { contactSchema, type ContactFormData } from "@/lib/validations"
 import { Button } from "@/components/ui/button"
 
@@ -164,7 +164,22 @@ export function Footer() {
   const isInView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <footer id="contato" ref={ref} className="relative overflow-hidden">
+    <footer id="contato" ref={ref} className="relative isolate overflow-hidden">
+      {/* Copa 2026 fixed background */}
+      {worldCupTheme && (
+        <div
+          className="absolute inset-0 -z-10 opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: "url('/images/copa-7.png')",
+            backgroundAttachment: "fixed",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Top divider */}
       <div className="section-divider" aria-hidden="true" />
 

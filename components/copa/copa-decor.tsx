@@ -12,13 +12,13 @@ export function CopaDecor() {
       {/* Upper-right corner: bunting "2026" — diagonal, anchored at top-right */}
       <motion.div
         className="absolute top-0 right-0"
-        style={{ transformOrigin: "top right" }}
-        initial={{ rotate: -18 }}
-        animate={{ rotate: [-18, -15, -18], y: [0, -3, 0] }}
+        style={{ transformOrigin: "top left" }}
+        initial={{ rotate: 18 }}
+        animate={{ rotate: [18, 15, 18], y: [0, -3, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image
-          src="/images/copa-8.webp"
+          src="/images/copa-8.png"
           alt=""
           width={724}
           height={241}
@@ -33,7 +33,7 @@ export function CopaDecor() {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image
-          src="/images/copa-3.webp"
+          src="/images/copa-3.png"
           alt=""
           width={120}
           height={120}
@@ -48,7 +48,7 @@ export function CopaDecor() {
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
         <Image
-          src="/images/copa-5.webp"
+          src="/images/copa-5.png"
           alt=""
           width={120}
           height={120}
@@ -63,7 +63,7 @@ export function CopaDecor() {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       >
         <Image
-          src="/images/copa-4.webp"
+          src="/images/copa-4.png"
           alt=""
           width={110}
           height={110}
@@ -78,7 +78,7 @@ export function CopaDecor() {
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
       >
         <Image
-          src="/images/copa-6.webp"
+          src="/images/copa-6.png"
           alt="Copa 2026"
           width={120}
           height={120}
@@ -89,7 +89,7 @@ export function CopaDecor() {
       {/* Bottom: ribbon strip "2026" */}
       <div className="absolute bottom-0 inset-x-0 opacity-30">
         <Image
-          src="/images/copa-7.webp"
+          src="/images/copa-7.png"
           alt=""
           width={1086}
           height={362}

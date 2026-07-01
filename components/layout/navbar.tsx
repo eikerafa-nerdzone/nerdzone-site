@@ -98,7 +98,7 @@ export function Navbar() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <Image
-                    src="/images/copa-3.webp"
+                    src="/images/copa-5.png"
                     alt=""
                     width={65}
                     height={65}

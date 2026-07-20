@@ -12,9 +12,6 @@ export const siteConfig = {
   youtube: "https://www.youtube.com/@NerdzoneIA",
 }
 
-/** Tema temporário da Copa do Mundo 2026. Remover ao encerrar (~2026-07-19): basta `false`. */
-export const worldCupTheme = true
-
 export const navLinks = [
   { label: "Início", href: "#hero" },
   { label: "Quem Somos", href: "#quem-somos" },

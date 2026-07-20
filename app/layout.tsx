@@ -3,8 +3,7 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google"
 import "./globals.css"
 import { Navbar } from "@/components/layout/navbar"
 import { WhatsAppButton } from "@/components/layout/whatsapp-button"
-import { CopaDecor } from "@/components/copa/copa-decor"
-import { siteConfig, worldCupTheme } from "@/lib/constants"
+import { siteConfig } from "@/lib/constants"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,7 +72,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-brand-dark text-foreground">
         <Navbar />
-        {worldCupTheme && <CopaDecor />}
         <main className="flex-1">{children}</main>
         <WhatsAppButton />
       </body>

@@ -286,10 +286,18 @@ export function Footer() {
                   ))}
                   <li>
                     <Link
-                      href="/produtos/erpsystem"
+                      href="/produtos/zonemanager"
                       className="text-gray-400 hover:text-brand-teal text-sm transition-colors"
                     >
-                      ERPSystem
+                      ZoneManager
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/produtos/zonego"
+                      className="text-gray-400 hover:text-brand-teal text-sm transition-colors"
+                    >
+                      ZoneGo
                     </Link>
                   </li>
                   <li>

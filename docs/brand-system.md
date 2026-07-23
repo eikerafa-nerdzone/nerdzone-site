@@ -78,7 +78,7 @@ Polimórfico: renderiza `<button>`, `<a>` (externo) ou `Link` (interno).
 ```tsx
 <Button onClick={...}>Conheça nossos produtos</Button>
 <Button variant="secondary" href="/#contato">Fale conosco</Button>
-<Button href={url} external gradient="purple">Acessar o ERPSystem</Button>
+<Button href={url} external gradient="purple">Acessar o ZoneManager</Button>
 ```
 
 ### `Badge`

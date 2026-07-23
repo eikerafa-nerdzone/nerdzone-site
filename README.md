@@ -6,7 +6,7 @@ Site institucional da **Nerdzone Solutions** — engenharia de software, produto
 
 ## Objetivo
 
-Apresentar a Nerdzone Solutions, seus produtos (ERPSystem) e serviços (Outsourcing de tecnologia), o posicionamento de marca e os canais de contato — unindo personalidade técnica com clareza de negócio.
+Apresentar a Nerdzone Solutions, seus produtos (ZoneManager e ZoneGo) e serviços (Outsourcing de tecnologia), o posicionamento de marca e os canais de contato — unindo personalidade técnica com clareza de negócio.
 
 ## Stack
 
@@ -41,7 +41,7 @@ RESEND_FROM_EMAIL=onboarding@resend.dev
 # Destino dos formulários de contato
 CONTACT_EMAIL=contato@nerdzone.com.br
 
-# URL de login do ERPSystem em produção
+# URL de login do ZoneManager em produção
 NEXT_PUBLIC_ERP_LOGIN_URL=https://app.nerdzone.com.br/login
 ```
 
@@ -61,7 +61,7 @@ npm run lint    # ESLint
 ```txt
 app/
   api/contact/        endpoint do formulário (Resend + Zod)
-  produtos/           páginas de ERPSystem e Outsourcing
+  produtos/           páginas de ZoneManager, ZoneGo e Outsourcing
   globals.css         tokens da marca, utilitárias e base
   layout.tsx          fontes, metadata/SEO, navbar e footer
   page.tsx            composição das seções da home

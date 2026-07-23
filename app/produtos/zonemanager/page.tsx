@@ -6,9 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "ERPSystem",
+  title: "ZoneManager",
   description:
-    "Sistema ERP moderno para centralizar pedidos, clientes, produtos, financeiro e gestão de equipes em um só lugar.",
+    "Sistema de gestão moderno para centralizar pedidos, clientes, produtos, financeiro e gestão de equipes em um só lugar.",
 }
 
 const features = [
@@ -26,13 +26,13 @@ const highlights = [
   "Multi-empresa e multi-usuário",
   "Seguro com autenticação robusta",
   "API REST documentada",
-  "Suporte e atualizações contínuas",
+  "Companion app ZoneGo para o cliente final",
 ]
 
-// TODO: Atualize esta URL quando o ERPSystem tiver domínio de produção
-const ERP_LOGIN_URL = process.env.NEXT_PUBLIC_ERP_LOGIN_URL ?? "https://app.nerdzone.com.br/login"
+// TODO: Atualize esta URL quando o ZoneManager tiver domínio de produção definitivo
+const ZONEMANAGER_LOGIN_URL = process.env.NEXT_PUBLIC_ERP_LOGIN_URL ?? "https://app.nerdzone.com.br/login"
 
-export default function ERPSystemPage() {
+export default function ZoneManagerPage() {
   return (
     <main className="min-h-screen bg-brand-dark pt-24 pb-20">
       {/* Back link */}
@@ -50,12 +50,20 @@ export default function ERPSystemPage() {
       <section className="container-brand mb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
+            <Image
+              src="/brand/logo-zonemanager.png"
+              alt="ZoneManager"
+              width={300}
+              height={100}
+              className="h-9 sm:h-10 w-auto mb-6"
+            />
+
             <Badge accent="purple" size="md" code className="mb-6">
               Produto Nerdzone
             </Badge>
 
             <h1 className="text-fluid-h1 font-extrabold text-white mb-6 leading-tight">
-              ERP<span className="text-brand-purple">System</span>
+              Zone<span className="text-brand-purple">Manager</span>
             </h1>
 
             <p className="text-gray-400 text-xl leading-relaxed mb-8">
@@ -64,9 +72,9 @@ export default function ERPSystemPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href={ERP_LOGIN_URL} external gradient="purple">
+              <Button href={ZONEMANAGER_LOGIN_URL} external gradient="purple">
                 <ExternalLink size={18} />
-                Acessar o ERPSystem
+                Acessar o ZoneManager
               </Button>
               <Button href="/#contato" variant="secondary" accent="purple">
                 Solicitar demonstração
@@ -85,8 +93,8 @@ export default function ERPSystemPage() {
               aria-hidden="true"
             />
             <Image
-              src="/images/erp-preview.png"
-              alt="Painel de controle do ERPSystem — indicadores, faturamento e pedidos em tempo real"
+              src="/images/zonemanager-preview.png"
+              alt="Painel de controle do ZoneManager — indicadores, faturamento e pedidos em tempo real"
               width={1889}
               height={818}
               sizes="(max-width: 1024px) 100vw, 600px"
@@ -127,7 +135,7 @@ export default function ERPSystemPage() {
             background: "linear-gradient(135deg, rgba(101,42,251,0.1) 0%, rgba(10,205,173,0.05) 100%)",
           }}
         >
-          <h2 className="text-2xl font-bold text-white mb-8">Por que escolher o ERPSystem?</h2>
+          <h2 className="text-2xl font-bold text-white mb-8">Por que escolher o ZoneManager?</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {highlights.map((item) => (
               <div key={item} className="flex items-center gap-3">
@@ -142,7 +150,7 @@ export default function ERPSystemPage() {
               <p className="text-white font-semibold mb-1">Pronto para começar?</p>
               <p className="text-gray-400 text-sm">Acesse agora ou entre em contato para uma demonstração personalizada.</p>
             </div>
-            <Button href={ERP_LOGIN_URL} external size="sm" className="flex-shrink-0">
+            <Button href={ZONEMANAGER_LOGIN_URL} external size="sm" className="flex-shrink-0">
               <ExternalLink size={16} />
               Acessar o sistema
             </Button>

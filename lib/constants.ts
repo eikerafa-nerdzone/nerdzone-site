@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Nerdzone Solutions",
   tagline: "Desenvolvendo para conectar você",
   description:
-    "Engenharia de software com alma nerd: unimos código, produto e IA para transformar ideias em soluções digitais que resolvem problemas reais de negócio. Outsourcing de talentos e o ERPSystem para a sua empresa.",
+    "Engenharia de software com alma nerd: unimos código, produto e IA para transformar ideias em soluções digitais que resolvem problemas reais de negócio. Outsourcing de talentos, o ZoneManager e o ZoneGo para a sua empresa.",
   url: "https://nerdzone-site.vercel.app",
   email: "contato@nerdzone.com.br",
   whatsapp: "5511939117113",
@@ -40,14 +40,24 @@ export const mvv = [
 
 export const produtos = [
   {
-    slug: "erpsystem",
-    name: "ERPSystem",
+    slug: "zonemanager",
+    name: "ZoneManager",
     tagline: "Gestão completa para sua empresa",
     shortDescription:
-      "Sistema ERP moderno e intuitivo para centralizar pedidos, clientes, produtos, financeiro e muito mais em um só lugar.",
+      "Sistema de gestão moderno e intuitivo para centralizar pedidos, clientes, produtos, financeiro e muito mais em um só lugar.",
     icon: "monitor",
     color: "purple",
-    cta: "Conhecer o ERPSystem",
+    cta: "Conhecer o ZoneManager",
+  },
+  {
+    slug: "zonego",
+    name: "ZoneGo",
+    tagline: "O app do seu cliente, sempre à mão",
+    shortDescription:
+      "Aplicativo mobile complementar ao ZoneManager para o cliente final acompanhar pedidos, status e notificações em tempo real.",
+    icon: "smartphone",
+    color: "lime",
+    cta: "Conhecer o ZoneGo",
   },
   {
     slug: "outsourcing",

@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Monitor, Users, ArrowRight, Sparkles } from "lucide-react"
+import { Monitor, Users, Smartphone, ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { produtos } from "@/lib/constants"
 import { SectionTitle } from "@/components/ui/section-title"
@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 const iconMap = {
   monitor: Monitor,
   users: Users,
+  smartphone: Smartphone,
 }
 
 const colorMap = {
@@ -18,15 +19,28 @@ const colorMap = {
     border: "hover:border-brand-purple/50",
     glow: "rgba(101,42,251,0.1)",
     iconBg: "from-brand-purple to-brand-purple-dark",
+    iconColor: "text-white",
     iconShadow: "shadow-brand-purple/25",
     arrow: "text-brand-purple group-hover:text-white",
+    hex: "#652afb",
   },
   teal: {
     border: "hover:border-brand-teal/50",
     glow: "rgba(10,205,173,0.1)",
     iconBg: "from-brand-teal to-brand-teal-dark",
+    iconColor: "text-white",
     iconShadow: "shadow-brand-teal/25",
     arrow: "text-brand-teal group-hover:text-white",
+    hex: "#0acdad",
+  },
+  lime: {
+    border: "hover:border-brand-accent/50",
+    glow: "rgba(204,255,0,0.1)",
+    iconBg: "from-brand-accent to-brand-accent",
+    iconColor: "text-brand-darker",
+    iconShadow: "shadow-brand-accent/20",
+    arrow: "text-brand-accent group-hover:text-white",
+    hex: "#ccff00",
   },
 }
 
@@ -46,12 +60,12 @@ export function Produtos() {
           <SectionTitle
             eyebrow="Soluções Nerdzone"
             title="Produtos & Serviços"
-            description="Do sistema de gestão à alocação de talentos — temos o que sua empresa precisa para crescer."
+            description="Do sistema de gestão ao app do seu cliente e à alocação de talentos — temos o que sua empresa precisa para crescer."
           />
         </motion.div>
 
         {/* Product cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {produtos.map((produto, i) => {
             const Icon = iconMap[produto.icon as keyof typeof iconMap]
             const colors = colorMap[produto.color as keyof typeof colorMap]
@@ -83,12 +97,12 @@ export function Produtos() {
                   <div
                     className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colors.iconBg} flex items-center justify-center mb-6 shadow-lg ${colors.iconShadow} group-hover:scale-110 transition-transform duration-300`}
                   >
-                    {Icon && <Icon size={24} className="text-white" strokeWidth={1.5} />}
+                    {Icon && <Icon size={24} className={colors.iconColor} strokeWidth={1.5} />}
                   </div>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge accent={produto.color as "purple" | "teal"} code>
+                    <Badge accent={produto.color as "purple" | "teal" | "lime"} code>
                       {produto.tagline}
                     </Badge>
                     <Badge accent="lime" icon={<Sparkles size={10} />}>
@@ -114,7 +128,7 @@ export function Produtos() {
                   <div
                     className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{
-                      background: `linear-gradient(90deg, transparent, ${produto.color === "purple" ? "#652afb" : "#0acdad"}, transparent)`,
+                      background: `linear-gradient(90deg, transparent, ${colors.hex}, transparent)`,
                     }}
                     aria-hidden="true"
                   />

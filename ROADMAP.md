@@ -98,6 +98,12 @@ Abordagem com a stack mais moderna disponível, **sem novas dependências** (Tai
 - ✅ **Decoração temática Copa do Mundo** (sutil) — ⚽ no logo (navbar + footer) e nos créditos, tudo atrás do flag `worldCupTheme` em `lib/constants.ts`. **Remoção agendada para 2026-07-20** (tarefa "remover-tema-copa-mundo" define `worldCupTheme = false`)
 - ✅ Imagem da equipe na página de Outsourcing — placeholder substituído pela foto da equipe (`equipe-nerdzone.webp`, otimizada de 2MB → 103KB), `next/image` responsivo com `sizes` e moldura
 
+### Fase 5 — itens adicionais (solicitados em 2026-07-23)
+
+- ✅ **Rebrand ERPSystem → ZoneManager** — produto renomeado em todo o site (`lib/constants.ts`, rota `app/produtos/zonemanager/`, footer, keywords), logo oficial incorporado (`public/brand/logo-zonemanager.png`), screenshot renomeado (`zonemanager-preview.png`)
+- ✅ **Novo produto ZoneGo** — app mobile complementar ao ZoneManager para o cliente final; nova rota `app/produtos/zonego/`, card na grid de produtos (accent `lime`), logo oficial incorporado (`public/brand/logo-zonego.png`)
+- ✅ Grid de produtos da home migrada de 2 para 3 colunas (`sm:grid-cols-2 lg:grid-cols-3`) para acomodar o ZoneGo
+
 ---
 
 ## Decisões (resolvidas)

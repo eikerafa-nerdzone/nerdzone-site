@@ -11,6 +11,7 @@ import {
   edicao2025,
   emissor,
   formatarData,
+  formatarEntre,
   formatarPeriodo,
   iniciativa,
   nomeEvento,
@@ -182,8 +183,8 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
                     </li>
                   ))}
                   <li>
-                    Práticas dos participantes: {edicao2025.praticas.horas} h entre{" "}
-                    {formatarPeriodo(edicao2025.praticas.periodo)}
+                    Práticas dos participantes: {edicao2025.praticas.horas} h{" "}
+                    {formatarEntre(edicao2025.praticas.periodo)}
                   </li>
                 </ul>
               </Detalhe>

@@ -13,7 +13,7 @@ import {
 } from "lucide-react"
 import { CabecalhoSecao } from "@/components/compartilhando-recursos/cabecalho-secao"
 import { classeCartao } from "@/components/compartilhando-recursos/estilos"
-import { edicao2025, formatarPeriodo } from "@/lib/compartilhando-recursos"
+import { edicao2025, formatarEntre, formatarPeriodo } from "@/lib/compartilhando-recursos"
 import { cn } from "@/lib/utils"
 
 const iconesEixo: Record<string, LucideIcon> = {
@@ -38,19 +38,20 @@ const faixasCarga = [
   },
 ]
 
+/** Item do <dl>: dt e dd filhos diretos do div; o ícone fica dentro do dt, posicionado à esquerda. */
 function Dado({ icone: Icone, rotulo, children }: { icone: LucideIcon; rotulo: string; children: ReactNode }) {
   return (
-    <div className={cn(classeCartao, "flex gap-4 p-5")}>
-      <span
-        className="flex size-10 flex-none items-center justify-center rounded-lg bg-cr-noite text-cr-bruma"
-        aria-hidden="true"
-      >
-        <Icone size={20} />
-      </span>
-      <div>
-        <dt className="text-sm text-cr-bruma">{rotulo}</dt>
-        <dd className="mt-1 font-medium leading-snug text-cr-nevoa">{children}</dd>
-      </div>
+    <div className={cn(classeCartao, "relative p-5 pl-[4.75rem]")}>
+      <dt className="text-sm text-cr-bruma">
+        <span
+          className="absolute left-5 top-5 flex size-10 items-center justify-center rounded-lg bg-cr-noite text-cr-bruma"
+          aria-hidden="true"
+        >
+          <Icone size={20} />
+        </span>
+        {rotulo}
+      </dt>
+      <dd className="mt-1 font-medium leading-snug text-cr-nevoa">{children}</dd>
     </div>
   )
 }
@@ -139,8 +140,8 @@ export function Edicao2025() {
               <li className="py-4 last:pb-0">
                 <p className="font-semibold text-cr-nevoa">Práticas dos participantes</p>
                 <p className="text-cr-bruma">
-                  {edicao2025.praticas.horas} h entre {formatarPeriodo(edicao2025.praticas.periodo)}, com revisão e
-                  aprovação pelo mentor
+                  {edicao2025.praticas.horas} h {formatarEntre(edicao2025.praticas.periodo)}, com revisão e aprovação
+                  pelo mentor
                 </p>
               </li>
             </ul>

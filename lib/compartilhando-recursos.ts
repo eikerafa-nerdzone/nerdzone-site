@@ -170,3 +170,8 @@ export function formatarData(iso: string): string {
 export function formatarPeriodo({ inicio, fim }: Periodo): string {
   return `${formatarData(inicio)} a ${formatarData(fim)}`
 }
+
+/** Para frases com "entre": "entre 01/09/2025 e 04/10/2025". */
+export function formatarEntre({ inicio, fim }: Periodo): string {
+  return `entre ${formatarData(inicio)} e ${formatarData(fim)}`
+}

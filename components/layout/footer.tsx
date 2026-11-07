@@ -248,7 +248,7 @@ export function Footer() {
 
               {/* Nav links */}
               <div className="mt-10">
-                <p className="text-gray-500 text-xs uppercase tracking-widest mb-4">Navegação</p>
+                <p className="text-gray-400 text-xs uppercase tracking-widest mb-4">Navegação</p>
                 <ul className="grid grid-cols-2 gap-2">
                   {navLinks.map((link) => (
                     <li key={link.href}>
@@ -289,7 +289,7 @@ export function Footer() {
 
               {/* Initiatives */}
               <div className="mt-8">
-                <p className="text-gray-500 text-xs uppercase tracking-widest mb-4">Iniciativas</p>
+                <p className="text-gray-400 text-xs uppercase tracking-widest mb-4">Iniciativas</p>
                 <ul className="grid grid-cols-2 gap-2">
                   <li>
                     <Link

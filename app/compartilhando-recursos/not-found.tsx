@@ -1,13 +1,8 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import { SearchX, ShieldCheck } from "lucide-react"
 import { classeBotao, classeCartao } from "@/components/compartilhando-recursos/estilos"
 import { rotaIniciativa } from "@/lib/compartilhando-recursos"
 import { cn } from "@/lib/utils"
-
-export const metadata: Metadata = {
-  title: "Código não encontrado",
-}
 
 export default function CodigoNaoEncontrado() {
   return (

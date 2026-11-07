@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { motion, useInView } from "framer-motion"
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
+import { LogotipoNerdZone } from "@/components/layout/logotipo-nerdzone"
 import { siteConfig, navLinks } from "@/lib/constants"
 import { iniciativa, rotaIniciativa } from "@/lib/compartilhando-recursos"
 import { contactSchema, type ContactFormData } from "@/lib/validations"
@@ -182,32 +182,7 @@ export function Footer() {
               transition={{ duration: 0.6 }}
             >
               {/* Brand */}
-              <div className="flex items-center gap-3 mb-6">
-                <Image
-                  src="/brand/logo-nerdzone.png"
-                  alt="Nerdzone Solutions"
-                  width={40}
-                  height={40}
-                  className="rounded-xl"
-                />
-                <span className="font-display text-2xl font-bold text-white">
-                  Nerd<span className="text-brand-teal">zone</span>{" "}
-                  <span className="gradient-text">Solutions</span>
-                </span>
-                <motion.span
-                  className="inline-flex -ml-3"
-                  animate={{ y: [0, -1.5, 0] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <Image
-                    src="/images/logo-ai-verde.webp"
-                    alt="AI"
-                    width={101}
-                    height={96}
-                    style={{ height: "6.6px", width: "auto" }}
-                  />
-                </motion.span>
-              </div>
+              <LogotipoNerdZone uso="rodape" className="mb-6 block" />
 
               <p className="text-gray-400 leading-relaxed mb-8 max-w-sm">
                 Engenharia de software com alma nerd — transformamos ideias em soluções digitais que resolvem problemas reais.

@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { LogotipoNerdZone } from "@/components/layout/logotipo-nerdzone"
 import { navLinks, siteConfig } from "@/lib/constants"
 
 export function Navbar() {
@@ -45,52 +45,10 @@ export function Navbar() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2.5 group relative"
+              className="flex items-center"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              <Image
-                src="/brand/logo-nerdzone.png"
-                alt="Nerdzone Solutions"
-                width={36}
-                height={36}
-                className="rounded-lg group-hover:scale-110 transition-transform duration-200"
-                priority
-              />
-              <motion.span
-                className="font-display font-bold text-lg leading-none"
-                whileHover={{ letterSpacing: "0.06em" }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-              >
-                <span className="text-white">Nerd</span>
-                <span className="text-brand-teal">zone</span>
-                {" "}
-                <motion.span
-                  style={{
-                    background: "linear-gradient(90deg, #0acdad, #652afb)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    display: "inline-block",
-                  }}
-                  whileHover={{ filter: "brightness(1.25)" }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Solutions
-                </motion.span>
-              </motion.span>
-              <motion.span
-                className="inline-flex -ml-2"
-                animate={{ y: [0, -1.5, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Image
-                  src="/images/logo-ai-verde.webp"
-                  alt="AI"
-                  width={101}
-                  height={96}
-                  style={{ height: "6.6px", width: "auto" }}
-                />
-              </motion.span>
+              <LogotipoNerdZone uso="menu" />
             </Link>
 
             {/* Desktop links */}

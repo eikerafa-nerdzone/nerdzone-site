@@ -1,7 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, type MouseEvent } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { LogotipoNerdZone } from "@/components/layout/logotipo-nerdzone"
@@ -10,6 +11,7 @@ import { navLinks, siteConfig } from "@/lib/constants"
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const isHome = usePathname() === "/"
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20)
@@ -17,15 +19,16 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const handleNavClick = (href: string) => {
+  // On the home page the link scrolls to its section; on other pages it navigates to "/#section"
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
     setIsMenuOpen(false)
-    const id = href.replace("#", "")
-    const el = document.getElementById(id)
-    if (el) {
-      const offset = 80
-      const top = el.getBoundingClientRect().top + window.scrollY - offset
-      window.scrollTo({ top, behavior: "smooth" })
-    }
+    if (!isHome || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+    const el = document.getElementById(href.replace("#", ""))
+    if (!el) return
+    event.preventDefault()
+    const offset = 80
+    const top = el.getBoundingClientRect().top + window.scrollY - offset
+    window.scrollTo({ top, behavior: "smooth" })
   }
 
   return (
@@ -55,12 +58,13 @@ export function Navbar() {
             <ul className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <button
-                    onClick={() => handleNavClick(link.href)}
-                    className="px-4 py-2 text-sm text-gray-300 hover:text-brand-teal rounded-md transition-colors duration-200 cursor-pointer"
+                  <Link
+                    href={`/${link.href}`}
+                    onClick={(event) => handleNavClick(event, link.href)}
+                    className="px-4 py-2 text-sm text-gray-300 hover:text-brand-teal rounded-md transition-colors duration-200"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -102,12 +106,13 @@ export function Navbar() {
             <ul className="flex flex-col px-4 py-4 gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <button
-                    onClick={() => handleNavClick(link.href)}
-                    className="w-full text-left px-4 py-3 text-sm text-gray-300 hover:text-brand-teal hover:bg-brand-purple/10 rounded-md transition-colors cursor-pointer"
+                  <Link
+                    href={`/${link.href}`}
+                    onClick={(event) => handleNavClick(event, link.href)}
+                    className="block px-4 py-3 text-sm text-gray-300 hover:text-brand-teal hover:bg-brand-purple/10 rounded-md transition-colors"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
               <li className="pt-2">

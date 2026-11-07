@@ -1,10 +1,22 @@
+import { readFile } from "node:fs/promises"
+import { join } from "node:path"
 import { ImageResponse } from "next/og"
+import { siteConfig } from "@/lib/constants"
 
-export const alt = "Nerdzone Solutions — Engenharia de Software, Produtos Digitais e IA"
+export const alt = `${siteConfig.name}: engenharia de software, produtos digitais e IA`
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
-export default function Image() {
+/** Logotipo do kit no 2x do menu, exibido em tamanho real. */
+const logotipo = {
+  arquivo: "public/brand/nerdzone-logotipo-horizontal-roxo-verde-agua-fundo-escuro-174@2x.png",
+  largura: 348,
+  altura: 82,
+}
+
+export default async function Image() {
+  const logotipoBase64 = await readFile(join(process.cwd(), logotipo.arquivo), "base64")
+
   return new ImageResponse(
     (
       <div
@@ -34,14 +46,16 @@ export default function Image() {
           }}
         />
 
-        <div style={{ display: "flex", fontSize: 44, fontWeight: 700, color: "#ccff00" }}>
-          {"</>"}
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse desenha <img>; next/image não se aplica aqui */}
+        <img
+          src={`data:image/png;base64,${logotipoBase64}`}
+          alt=""
+          width={logotipo.largura}
+          height={logotipo.altura}
+        />
 
-        <div style={{ display: "flex", marginTop: 28, fontSize: 96, fontWeight: 700, letterSpacing: -2 }}>
-          <span style={{ color: "#ffffff" }}>Nerd</span>
-          <span style={{ color: "#0acdad" }}>zone</span>
-          <span style={{ color: "#652afb", marginLeft: 24 }}>Solutions</span>
+        <div style={{ display: "flex", marginTop: 36, fontSize: 84, letterSpacing: -2, color: "#ffffff" }}>
+          {siteConfig.name}
         </div>
 
         <div
@@ -60,7 +74,7 @@ export default function Image() {
           Engenharia de Software · Produtos Digitais · IA
         </div>
 
-        <div style={{ display: "flex", marginTop: 56, fontSize: 28, color: "#0acdad", letterSpacing: 4 }}>
+        <div style={{ display: "flex", marginTop: 48, fontSize: 28, color: "#0acdad", letterSpacing: 4 }}>
           TECNOLOGIA · INTELIGÊNCIA · RESULTADOS
         </div>
       </div>

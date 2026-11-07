@@ -37,6 +37,20 @@ export const iniciativa = {
   },
 }
 
+/** Origem da iniciativa: o versículo como o mentor o carrega, a referência literal e a oração dele. */
+export const origem = {
+  frase: "Onde estiver um ou mais reunidos em meu nome",
+  referencia: {
+    passagem: "Mateus 18:20",
+    traducao: "ARA",
+    texto: "Porque, onde estiverem dois ou três reunidos em meu nome, ali estou no meio deles.",
+  },
+  oracao: {
+    texto: "Tudo é para tua honra e glória. Me abençoe para que eu possa compartilhar cada vez mais recursos.",
+    assinatura: "Erick Prado, mentor",
+  },
+}
+
 export type Periodo = {
   /** Data no formato ISO (AAAA-MM-DD). */
   inicio: string

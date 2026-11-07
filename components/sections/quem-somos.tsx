@@ -61,7 +61,7 @@ export function QuemSomos() {
               />
               <Image
                 src="/images/mascote-nerdzone.webp"
-                alt="Mascote oficial NerdZone — desenvolvedor com mindset de engenharia"
+                alt="Mascote oficial NerdZone: desenvolvedor com mindset de engenharia"
                 width={1080}
                 height={889}
                 sizes="(max-width: 1024px) 100vw, 540px"

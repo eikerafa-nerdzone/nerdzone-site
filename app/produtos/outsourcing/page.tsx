@@ -100,7 +100,7 @@ export default function OutsourcingPage() {
             />
             <Image
               src="/images/equipe-nerdzone.webp"
-              alt="Equipe NerdZone — desenvolvedores, designers e analistas"
+              alt="Equipe NerdZone: desenvolvedores, designers e analistas"
               width={1200}
               height={675}
               sizes="(max-width: 1024px) 100vw, 600px"

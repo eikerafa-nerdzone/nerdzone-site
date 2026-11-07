@@ -22,6 +22,7 @@ import {
   formatarCargaHoraria,
   type DocumentoEmitido,
 } from "@/lib/compartilhando-recursos-documentos"
+import { siteConfig } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 
 export const dynamicParams = false
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName: "Nerdzone Solutions",
+    siteName: siteConfig.name,
     title: `Validação de documento | ${iniciativa.nome}`,
     description: descricao,
     images: [

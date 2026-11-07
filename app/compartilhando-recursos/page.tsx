@@ -7,6 +7,7 @@ import { NossaOrigem } from "@/components/compartilhando-recursos/nossa-origem"
 import { OQueE } from "@/components/compartilhando-recursos/o-que-e"
 import { Validar } from "@/components/compartilhando-recursos/validar"
 import { iniciativa, rotaIniciativa } from "@/lib/compartilhando-recursos"
+import { siteConfig } from "@/lib/constants"
 
 const tituloOg = `${iniciativa.nome} | ${iniciativa.descritor}`
 const descricao = `${iniciativa.descritor}. Conheça a iniciativa e os eventos e valide os documentos emitidos.`
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: rotaIniciativa,
-    siteName: "Nerdzone Solutions",
+    siteName: siteConfig.name,
     title: tituloOg,
     description: descricao,
     images: [

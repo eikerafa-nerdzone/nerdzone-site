@@ -59,7 +59,7 @@ export default function ZoneManagerPage() {
             />
 
             <Badge accent="purple" size="md" code className="mb-6">
-              Produto Nerdzone
+              Produto NerdZone
             </Badge>
 
             <h1 className="text-fluid-h1 font-extrabold text-white mb-6 leading-tight">

@@ -38,7 +38,7 @@ export function MVV() {
           <SectionTitle
             eyebrow="Nossa essência"
             accent="lime"
-            title="Mundo Nerdzone"
+            title="Mundo NerdZone"
             description={
               <>
                 Esse é o nosso mundo e nossa{" "}

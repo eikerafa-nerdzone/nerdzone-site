@@ -33,7 +33,7 @@ const beneficios = [
 const etapas = [
   { num: "01", title: "Entendimento", desc: "Conversamos sobre seu projeto, stack, prazos e cultura de equipe." },
   { num: "02", title: "Match", desc: "Apresentamos profissionais alinhados ao seu perfil em até 72 horas." },
-  { num: "03", title: "Onboarding", desc: "O profissional entra no seu time com acompanhamento da Nerdzone." },
+  { num: "03", title: "Onboarding", desc: "O profissional entra no seu time com acompanhamento da NerdZone." },
   { num: "04", title: "Gestão contínua", desc: "Acompanhamos a performance e garantimos a satisfação da parceria." },
 ]
 
@@ -60,7 +60,7 @@ export default function OutsourcingPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <Badge accent="teal" size="md" code className="mb-6">
-              Serviço Nerdzone
+              Serviço NerdZone
             </Badge>
 
             <h1 className="text-fluid-h1 font-extrabold text-white mb-6 leading-tight">
@@ -100,7 +100,7 @@ export default function OutsourcingPage() {
             />
             <Image
               src="/images/equipe-nerdzone.webp"
-              alt="Equipe Nerdzone — desenvolvedores, designers e analistas"
+              alt="Equipe NerdZone — desenvolvedores, designers e analistas"
               width={1200}
               height={675}
               sizes="(max-width: 1024px) 100vw, 600px"
@@ -167,7 +167,7 @@ export default function OutsourcingPage() {
         >
           <div className="grid sm:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4">Por que a Nerdzone?</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">Por que a NerdZone?</h2>
               <div className="space-y-3">
                 {beneficios.map((b) => (
                   <div key={b} className="flex items-center gap-3">

@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     "arquitetura de software",
     "ERP",
     "sistema de gestão",
-    "Nerdzone Solutions",
+    siteConfig.name,
     "ZoneManager",
     "ZoneGo",
   ],
-  authors: [{ name: "Nerdzone Solutions" }],
+  authors: [{ name: siteConfig.name }],
   openGraph: {
     type: "website",
     locale: "pt_BR",

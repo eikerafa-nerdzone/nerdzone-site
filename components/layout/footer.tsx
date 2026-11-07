@@ -214,7 +214,7 @@ export function Footer() {
                   href={siteConfig.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn da Nerdzone"
+                  aria-label="LinkedIn da NerdZone"
                   className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-teal hover:border-brand-teal/40 transition-all duration-200"
                 >
                   {/* LinkedIn icon */}
@@ -226,7 +226,7 @@ export function Footer() {
                   href={siteConfig.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram da Nerdzone"
+                  aria-label="Instagram da NerdZone"
                   className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-teal hover:border-brand-teal/40 transition-all duration-200"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -237,7 +237,7 @@ export function Footer() {
                   href={siteConfig.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="YouTube da Nerdzone"
+                  aria-label="YouTube da NerdZone"
                   className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-teal hover:border-brand-teal/40 transition-all duration-200"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -329,7 +329,7 @@ export function Footer() {
       <div className="border-t border-white/5 pt-6 pb-20 sm:pb-6">
         <div className="container-brand flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Nerdzone Solutions. Todos os direitos reservados.
+            © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.
           </p>
           <p className="text-gray-600 text-xs">
             Feito com ☕ e muito código

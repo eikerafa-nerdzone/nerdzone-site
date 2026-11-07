@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Site Nerdzone <${fromEmail}>`,
+        from: `Site NerdZone <${fromEmail}>`,
         to: [toEmail],
         reply_to: data.email,
         subject: `[Site] Contato de ${data.name}`,

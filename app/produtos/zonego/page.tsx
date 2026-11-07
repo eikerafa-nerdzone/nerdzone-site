@@ -53,7 +53,7 @@ export default function ZoneGoPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <Badge accent="lime" size="md" code className="mb-6">
-              Aplicativo Nerdzone
+              Aplicativo NerdZone
             </Badge>
 
             <h1 className="text-fluid-h1 font-extrabold text-white mb-6 leading-tight">

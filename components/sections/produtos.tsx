@@ -58,7 +58,7 @@ export function Produtos() {
           transition={{ duration: 0.6 }}
         >
           <SectionTitle
-            eyebrow="Soluções Nerdzone"
+            eyebrow="Soluções NerdZone"
             title="Produtos & Serviços"
             description="Do sistema de gestão ao app do seu cliente e à alocação de talentos — temos o que sua empresa precisa para crescer."
           />

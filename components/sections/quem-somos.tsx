@@ -19,7 +19,7 @@ const highlights = [
   },
   {
     icon: Lightbulb,
-    label: "Algoritmo Nerdzone",
+    label: "Algoritmo NerdZone",
     desc: "Feito é melhor que perfeito — entregamos valor real",
   },
 ]
@@ -61,7 +61,7 @@ export function QuemSomos() {
               />
               <Image
                 src="/images/mascote-nerdzone.webp"
-                alt="Mascote oficial Nerdzone — desenvolvedor com mindset de engenharia"
+                alt="Mascote oficial NerdZone — desenvolvedor com mindset de engenharia"
                 width={1080}
                 height={889}
                 sizes="(max-width: 1024px) 100vw, 540px"
@@ -93,7 +93,7 @@ export function QuemSomos() {
 
             <p className="text-gray-400 text-lg leading-relaxed mb-10">
               Com o{" "}
-              <strong className="text-brand-purple">Algoritmo Nerdzone</strong>, seu projeto é
+              <strong className="text-brand-purple">Algoritmo NerdZone</strong>, seu projeto é
               desenvolvido sob medida, com a engenharia, a qualidade e a excelência que o seu
               negócio merece. Feito é melhor que perfeito — mas feito com excelência é o ideal.
             </p>

@@ -34,8 +34,9 @@ export default function NotFound() {
 
           <p className="mt-10 text-gray-400 leading-relaxed">
             Chegou aqui pelo código de um documento da iniciativa Compartilhando Recursos? Confira o código impresso
-            no documento e digite de novo na validação. São 12 letras e números; maiúsculas, minúsculas e hifens não
-            fazem diferença.
+            no documento, com 12 letras e números no formato{" "}
+            <span className="font-mono text-gray-300">XXXX-XXXX-XXXX</span>, e digite de novo na validação.
+            Maiúsculas, minúsculas e hifens não fazem diferença.
           </p>
         </div>
       </div>

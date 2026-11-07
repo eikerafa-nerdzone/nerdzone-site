@@ -8,13 +8,13 @@ import { classeBotao, classeCartao } from "@/components/compartilhando-recursos/
 import {
   buscarDocumento,
   documentos,
-  edicao2025,
   emissor,
+  formatarCargaHoraria,
   formatarData,
   formatarEntre,
+  formatarLocal,
   formatarPeriodo,
   iniciativa,
-  nomeEvento,
   periodoRealizacao,
   rotaIniciativa,
   validadorGovBr,
@@ -92,6 +92,7 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
   const { codigo } = await params
   const documento = buscarDocumento(codigo)
   if (!documento) notFound()
+  const { evento } = documento
 
   return (
     <div className="pt-24 pb-20 sm:pt-32 sm:pb-24">
@@ -123,14 +124,14 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
                 {documento.titular}
               </CampoDestaque>
               <CampoDestaque rotulo="Evento" tamanho="text-[1.375rem] sm:text-3xl">
-                {nomeEvento}
+                {evento.programa}, edição {evento.edicao}, da iniciativa {iniciativa.nome}
               </CampoDestaque>
               <CampoDestaque
                 rotulo="Data"
                 apoio={`Emitido em ${formatarData(documento.emissao)}`}
                 tamanho="text-3xl sm:text-4xl"
               >
-                {formatarPeriodo(periodoRealizacao)}
+                {formatarPeriodo(periodoRealizacao(evento))}
               </CampoDestaque>
             </dl>
           </article>
@@ -169,26 +170,26 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
               <Detalhe rotulo="Código">
                 <span className="font-mono text-lg tracking-wider">{documento.codigo}</span>
               </Detalhe>
-              <Detalhe rotulo="Carga horária do programa">{documento.cargaHorariaPrograma} h</Detalhe>
-              {documento.cargaMinistrada !== undefined && (
-                <Detalhe rotulo="Carga horária ministrada">
-                  {documento.cargaMinistrada} h (encontros dos Blocos 1 e 2)
-                </Detalhe>
-              )}
+              <Detalhe rotulo="Carga horária">
+                {documento.cargaHoraria.map((carga) => (
+                  <span key={formatarCargaHoraria(carga)} className="block">
+                    {formatarCargaHoraria(carga)}
+                  </span>
+                ))}
+              </Detalhe>
               <Detalhe rotulo="Períodos">
                 <ul className="space-y-1">
-                  {edicao2025.blocos.map((bloco) => (
+                  {evento.blocos.map((bloco) => (
                     <li key={bloco.nome}>
                       {bloco.nome}: {formatarPeriodo(bloco.periodo)}, {bloco.horasEncontros} h de encontros
                     </li>
                   ))}
                   <li>
-                    Práticas dos participantes: {edicao2025.praticas.horas} h{" "}
-                    {formatarEntre(edicao2025.praticas.periodo)}
+                    Práticas dos participantes: {evento.praticas.horas} h {formatarEntre(evento.praticas.periodo)}
                   </li>
                 </ul>
               </Detalhe>
-              <Detalhe rotulo="Local">{edicao2025.local}</Detalhe>
+              <Detalhe rotulo="Local">{formatarLocal(evento.local)}</Detalhe>
               <Detalhe rotulo="Emissor">
                 {emissor.razaoSocial}
                 <span className="block text-cr-bruma">CNPJ {emissor.cnpj}</span>

@@ -1,16 +1,15 @@
 import type { Metadata } from "next"
+import { ComoFunciona } from "@/components/compartilhando-recursos/como-funciona"
 import { Contato } from "@/components/compartilhando-recursos/contato"
-import { Edicao2025 } from "@/components/compartilhando-recursos/edicao-2025"
+import { Eventos } from "@/components/compartilhando-recursos/eventos"
 import { Hero } from "@/components/compartilhando-recursos/hero"
-import { Materiais } from "@/components/compartilhando-recursos/materiais"
 import { NossaOrigem } from "@/components/compartilhando-recursos/nossa-origem"
 import { OQueE } from "@/components/compartilhando-recursos/o-que-e"
 import { Validar } from "@/components/compartilhando-recursos/validar"
 import { iniciativa, rotaIniciativa } from "@/lib/compartilhando-recursos"
-import { listarMateriaisDisponiveis } from "@/lib/compartilhando-recursos-materiais"
 
 const tituloOg = `${iniciativa.nome} | ${iniciativa.descritor}`
-const descricao = `${iniciativa.descritor}. Conheça a edição 2025 do Programa de Formação em Tecnologia e valide os documentos emitidos.`
+const descricao = `${iniciativa.descritor}. Conheça a iniciativa e os eventos, baixe os materiais e valide os documentos emitidos.`
 
 export const metadata: Metadata = {
   title: iniciativa.nome,
@@ -39,16 +38,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function IniciativaPage() {
-  const materiais = await listarMateriaisDisponiveis()
-
+export default function IniciativaPage() {
   return (
     <>
-      <Hero temMateriais={materiais.length > 0} />
+      <Hero />
       <OQueE />
+      <ComoFunciona />
       <NossaOrigem />
-      <Edicao2025 />
-      <Materiais materiais={materiais} />
+      <Eventos />
       <Validar />
       <Contato />
     </>

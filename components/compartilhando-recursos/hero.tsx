@@ -1,10 +1,10 @@
 import Image from "next/image"
-import { Download, ShieldCheck } from "lucide-react"
+import { CalendarDays, ShieldCheck } from "lucide-react"
 import { Aneis } from "@/components/compartilhando-recursos/aneis"
 import { classeBotao } from "@/components/compartilhando-recursos/estilos"
 import { iniciativa } from "@/lib/compartilhando-recursos"
 
-export function Hero({ temMateriais }: { temMateriais: boolean }) {
+export function Hero() {
   return (
     <section aria-labelledby="hero-titulo" className="relative isolate overflow-hidden pt-24 pb-20 sm:pt-36 sm:pb-28">
       <div className="container-brand grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
@@ -27,12 +27,10 @@ export function Hero({ temMateriais }: { temMateriais: boolean }) {
               <ShieldCheck size={18} aria-hidden="true" />
               Validar um documento
             </a>
-            {temMateriais && (
-              <a href="#materiais" className={classeBotao("secundario")}>
-                <Download size={18} aria-hidden="true" />
-                Materiais para baixar
-              </a>
-            )}
+            <a href="#eventos" className={classeBotao("secundario")}>
+              <CalendarDays size={18} aria-hidden="true" />
+              Conhecer os eventos
+            </a>
           </div>
         </div>
 

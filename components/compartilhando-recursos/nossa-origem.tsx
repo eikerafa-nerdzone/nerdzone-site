@@ -33,7 +33,7 @@ export function NossaOrigem() {
     <section
       id="origem"
       aria-labelledby="origem-titulo"
-      className="scroll-mt-24 border-t border-cr-linha bg-cr-noite-2/50 py-20 sm:py-24"
+      className="scroll-mt-24 border-t border-cr-linha py-20 sm:py-24"
     >
       <div className="container-brand">
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
@@ -72,7 +72,7 @@ export function NossaOrigem() {
           <h3 className="text-xl font-semibold text-cr-nevoa">Como ler o símbolo</h3>
           <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {leituras.map(({ titulo, texto, icone: Icone }) => (
-              <li key={titulo} className="rounded-xl border border-cr-linha bg-cr-noite p-5">
+              <li key={titulo} className="rounded-xl border border-cr-linha bg-cr-noite-2 p-5">
                 <Icone size={22} className="text-cr-bruma" aria-hidden="true" />
                 <p className="mt-4 font-semibold text-cr-nevoa">{titulo}</p>
                 <p className="mt-2 text-cr-bruma">{texto}</p>

@@ -7,6 +7,7 @@ export const rotaCodigoNaoEncontrado = `${rotaIniciativa}/codigo-nao-encontrado`
 export const iniciativa = {
   nome: "Compartilhando Recursos",
   sigla: "CoRe",
+  organizacao: "NerdZone",
   descritor: "Iniciativa NerdZone de formação gratuita em tecnologia",
   slogan: "No centro, o que compartilhamos.",
   resumo: "Compartilhando Recursos é a iniciativa NerdZone de formação gratuita em tecnologia.",
@@ -37,6 +38,7 @@ export const iniciativa = {
 }
 
 export type Periodo = {
+  /** Data no formato ISO (AAAA-MM-DD). */
   inicio: string
   fim: string
 }
@@ -45,59 +47,102 @@ export type Eixo = {
   numero: string
   titulo: string
   detalhe?: string
+  /** Tema do ícone mostrado no cartão do eixo. */
+  tema?: "gestao" | "desenvolvimento" | "ia"
 }
 
-type Bloco = {
+export type Bloco = {
   nome: string
   periodo: Periodo
   horasEncontros: number
 }
 
-type Edicao = {
+export type Local = {
+  espaco: string
+  endereco: string
+  cidade: string
+}
+
+export type Material = {
+  id: string
+  titulo: string
+  descricao: string
+  formato: "PDF" | "PPTX"
+  /** Nome do arquivo em public/compartilhando-recursos/downloads/<id do evento>/. */
+  arquivo: string
+}
+
+export type Evento = {
+  /** Identifica o evento na página e nomeia a pasta dos materiais para baixar. */
+  id: string
   programa: string
-  ano: number
+  edicao: number
   formatos: string[]
   eixos: Eixo[]
   blocos: Bloco[]
   praticas: { periodo: Periodo; horas: number }
-  cargaHorariaPrograma: number
-  local: string
+  local: Local
   modalidade: string
-  plataforma: string
+  plataforma: { nome: string; ferramentas: string[] }
   mentor: string
   parceria: string
+  materiais: Material[]
 }
 
-export const edicao2025: Edicao = {
+const programaFormacao2025: Evento = {
+  id: "2025",
   programa: "Programa de Formação em Tecnologia",
-  ano: 2025,
+  edicao: 2025,
   formatos: ["Treinamento", "Workshop", "Oficina gratuita"],
   eixos: [
-    { numero: "01", titulo: "Agilidade e Gestão de Projetos" },
-    { numero: "02", titulo: "Atuar como Desenvolvedor", detalhe: "Nível estágio e júnior" },
-    { numero: "03", titulo: "Desenvolvimento e Orquestração de IA" },
+    { numero: "01", titulo: "Agilidade e Gestão de Projetos", tema: "gestao" },
+    { numero: "02", titulo: "Atuar como Desenvolvedor", detalhe: "Nível estágio e júnior", tema: "desenvolvimento" },
+    { numero: "03", titulo: "Desenvolvimento e Orquestração de IA", tema: "ia" },
   ],
   blocos: [
     { nome: "Bloco 1", periodo: { inicio: "2025-09-01", fim: "2025-09-06" }, horasEncontros: 35 },
     { nome: "Bloco 2", periodo: { inicio: "2025-09-29", fim: "2025-10-04" }, horasEncontros: 23 },
   ],
   praticas: { periodo: { inicio: "2025-09-01", fim: "2025-10-04" }, horas: 10 },
-  cargaHorariaPrograma: 68,
-  local: "WeWork, Avenida Paulista, 1374, São Paulo/SP",
+  local: { espaco: "WeWork", endereco: "Avenida Paulista, 1374", cidade: "São Paulo/SP" },
   modalidade: "Híbrida (presencial com acompanhamento online)",
-  plataforma: "Microsoft Teams (com Azure DevOps, VS Code e Visual Studio)",
+  plataforma: { nome: "Microsoft Teams", ferramentas: ["Azure DevOps", "VS Code", "Visual Studio"] },
   mentor: "Erick Prado",
   parceria: "Estação Hack",
+  materiais: [
+    {
+      id: "documentacao",
+      titulo: "Documentação do programa",
+      descricao: "Os três eixos com módulos, práticas e entregáveis, mais modelos, checklists e glossário.",
+      formato: "PDF",
+      arquivo: "NerdZone_Documentacao_Programa_de_Formacao.pdf",
+    },
+    {
+      id: "apresentacao",
+      titulo: "Apresentação do programa",
+      descricao: "Slides do programa, com o cronograma e o conteúdo dos três eixos.",
+      formato: "PPTX",
+      arquivo: "NerdZone_Apresentacao_Programa_de_Formacao.pptx",
+    },
+  ],
 }
 
-export const nomeEvento = `${edicao2025.programa}, edição ${edicao2025.ano}, da iniciativa ${iniciativa.nome}`
+/** Eventos da iniciativa, do mais recente para o mais antigo. */
+export const eventos: Evento[] = [programaFormacao2025]
 
-export const periodoRealizacao: Periodo = {
-  inicio: edicao2025.blocos[0].periodo.inicio,
-  fim: edicao2025.blocos[edicao2025.blocos.length - 1].periodo.fim,
+/** Horas de encontros com o mentor (soma dos blocos): a carga ministrada. */
+export function horasDeEncontros(evento: Evento): number {
+  return evento.blocos.reduce((total, bloco) => total + bloco.horasEncontros, 0)
 }
 
-export const cargaMinistrada = edicao2025.blocos.reduce((total, bloco) => total + bloco.horasEncontros, 0)
+/** Carga horária do programa: encontros mais as práticas dos participantes. */
+export function cargaHorariaPrograma(evento: Evento): number {
+  return horasDeEncontros(evento) + evento.praticas.horas
+}
+
+export function periodoRealizacao(evento: Evento): Periodo {
+  return { inicio: evento.blocos[0].periodo.inicio, fim: evento.blocos[evento.blocos.length - 1].periodo.fim }
+}
 
 export const contato = {
   whatsapp: siteConfig.whatsapp,
@@ -116,6 +161,12 @@ export const emissor = {
 
 export const validadorGovBr = "https://validar.iti.gov.br"
 
+export type CargaHoraria = {
+  horas: number
+  /** Complemento depois das horas, como "do programa". */
+  complemento?: string
+}
+
 export type DocumentoEmitido = {
   /** Código único no formato canônico (XXXX-XXXX-XXXX). */
   codigo: string
@@ -123,38 +174,46 @@ export type DocumentoEmitido = {
   /** Nome completo do titular. */
   titular: string
   funcao: string
+  evento: Evento
   emissao: string
-  cargaHorariaPrograma: number
-  /** Só na declaração do instrutor: horas de encontros ministradas. */
-  cargaMinistrada?: number
+  /** Linhas da carga horária, na ordem em que aparecem no documento. */
+  cargaHoraria: CargaHoraria[]
 }
 
 const dataEmissao = "2026-11-06"
 
-function certificado(codigo: string, titular: string): DocumentoEmitido {
+function declaracaoDeInstrutor(codigo: string, titular: string, evento: Evento): DocumentoEmitido {
+  return {
+    codigo,
+    tipo: "Declaração de atuação como mentor e instrutor",
+    titular,
+    funcao: "Mentor e instrutor",
+    evento,
+    emissao: dataEmissao,
+    cargaHoraria: [
+      { horas: horasDeEncontros(evento), complemento: "ministradas (encontros)" },
+      { horas: cargaHorariaPrograma(evento), complemento: "do programa" },
+    ],
+  }
+}
+
+function certificadoDeParticipacao(codigo: string, titular: string, evento: Evento): DocumentoEmitido {
   return {
     codigo,
     tipo: "Certificado de participação",
     titular,
     funcao: "Participante",
+    evento,
     emissao: dataEmissao,
-    cargaHorariaPrograma: edicao2025.cargaHorariaPrograma,
+    cargaHoraria: [{ horas: cargaHorariaPrograma(evento) }],
   }
 }
 
 export const documentos: DocumentoEmitido[] = [
-  {
-    codigo: "D92E-G9HF-JYSP",
-    tipo: "Declaração de atuação como mentor e instrutor",
-    titular: "Erick Rafael Prado",
-    funcao: "Mentor e instrutor",
-    emissao: dataEmissao,
-    cargaHorariaPrograma: edicao2025.cargaHorariaPrograma,
-    cargaMinistrada,
-  },
-  certificado("N3PG-SR5Q-V7DW", "Caroline Monteiro de Souza"),
-  certificado("3ZR9-HU9T-S3NK", "Elizabeth Monteiro de Souza"),
-  certificado("W38R-2JH3-KFZW", "Marciel Bonette"),
+  declaracaoDeInstrutor("D92E-G9HF-JYSP", "Erick Rafael Prado", programaFormacao2025),
+  certificadoDeParticipacao("N3PG-SR5Q-V7DW", "Caroline Monteiro de Souza", programaFormacao2025),
+  certificadoDeParticipacao("3ZR9-HU9T-S3NK", "Elizabeth Monteiro de Souza", programaFormacao2025),
+  certificadoDeParticipacao("W38R-2JH3-KFZW", "Marciel Bonette", programaFormacao2025),
 ]
 
 export function buscarDocumento(codigo: string): DocumentoEmitido | undefined {
@@ -171,7 +230,36 @@ export function formatarPeriodo({ inicio, fim }: Periodo): string {
   return `${formatarData(inicio)} a ${formatarData(fim)}`
 }
 
+/** Período sem repetir mês e ano iguais: "01 a 06/09/2025", "29/09 a 04/10/2025". */
+export function formatarPeriodoCompacto({ inicio, fim }: Periodo): string {
+  const [anoInicio, mesInicio, diaInicio] = inicio.split("-")
+  const [anoFim, mesFim] = fim.split("-")
+  if (anoInicio !== anoFim) return formatarPeriodo({ inicio, fim })
+  const comeco = mesInicio === mesFim ? diaInicio : `${diaInicio}/${mesInicio}`
+  return `${comeco} a ${formatarData(fim)}`
+}
+
 /** Para frases com "entre": "entre 01/09/2025 e 04/10/2025". */
 export function formatarEntre({ inicio, fim }: Periodo): string {
   return `entre ${formatarData(inicio)} e ${formatarData(fim)}`
+}
+
+/** ["Treinamento", "Workshop", "Oficina gratuita"] vira "Treinamento, workshop e oficina gratuita". */
+export function formatarLista(itens: string[]): string {
+  const emFrase = itens.map((item, indice) => (indice === 0 ? item : item.charAt(0).toLowerCase() + item.slice(1)))
+  return new Intl.ListFormat("pt-BR", { style: "long", type: "conjunction" }).format(emFrase)
+}
+
+export function formatarLocal({ espaco, endereco, cidade }: Local): string {
+  return `${espaco}, ${endereco}, ${cidade}`
+}
+
+/** "Microsoft Teams (com Azure DevOps, VS Code e Visual Studio)" */
+export function formatarPlataforma({ nome, ferramentas }: Evento["plataforma"]): string {
+  const lista = new Intl.ListFormat("pt-BR", { style: "long", type: "conjunction" }).format(ferramentas)
+  return `${nome} (com ${lista})`
+}
+
+export function formatarCargaHoraria({ horas, complemento }: CargaHoraria): string {
+  return complemento ? `${horas} h ${complemento}` : `${horas} h`
 }

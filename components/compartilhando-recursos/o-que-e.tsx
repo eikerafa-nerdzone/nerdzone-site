@@ -2,7 +2,7 @@ import Image from "next/image"
 import { BookOpen, GraduationCap, Wrench } from "lucide-react"
 import { CabecalhoSecao } from "@/components/compartilhando-recursos/cabecalho-secao"
 import { classeCartao } from "@/components/compartilhando-recursos/estilos"
-import { edicao2025, iniciativa } from "@/lib/compartilhando-recursos"
+import { iniciativa } from "@/lib/compartilhando-recursos"
 import { cn } from "@/lib/utils"
 
 const recursos = [
@@ -23,18 +23,15 @@ export function OQueE() {
               participa conhecimento, ferramentas e mentoria.
             </p>
             <p>
-              A edição de {edicao2025.ano}, o {edicao2025.programa}, é apresentada sob esta iniciativa. É um
-              treinamento, workshop e oficina gratuita conduzido pelo mentor {edicao2025.mentor}, em formato híbrido,
-              com encontros presenciais na Avenida Paulista, em São Paulo, e acompanhamento online. O programa se
-              organiza em três eixos: Agilidade e Gestão de Projetos; Atuar como Desenvolvedor (nível estágio e
-              júnior); e Desenvolvimento e Orquestração de IA. Tem a parceria e a orientação da {edicao2025.parceria}.
+              Compartilhar recursos é colocar em comum o que ajuda alguém a aprender e a trabalhar com tecnologia, sem
+              custo para quem participa. O que cada pessoa recebe pode, depois, ser passado adiante.
             </p>
           </CabecalhoSecao>
 
           <div className="mt-10">
-            <p className="text-cr-bruma">
-              Recursos são conhecimento, ferramentas e mentoria, compartilhados com quem participa.
-            </p>
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-widest text-cr-bruma">
+              O que compartilhamos
+            </h3>
             <ul className="mt-4 flex flex-wrap gap-3">
               {recursos.map(({ nome, icone: Icone }) => (
                 <li

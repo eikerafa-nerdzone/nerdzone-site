@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Desenvolvendo para conectar você",
   description:
     "Engenharia de software com alma nerd: unimos código, produto e IA para transformar ideias em soluções digitais que resolvem problemas reais de negócio. Outsourcing de talentos, o ZoneManager e o ZoneGo para a sua empresa.",
-  url: "https://nerdzone-site.vercel.app",
+  url: "https://www.nerdzonesolutions.com",
   email: "contato@nerdzone.com.br",
   whatsapp: "5511939117113",
   whatsappMessage: "Olá! Vim pelo site da NerdZone e gostaria de saber mais.",

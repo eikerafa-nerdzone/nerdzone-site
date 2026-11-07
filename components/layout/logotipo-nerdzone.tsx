@@ -6,6 +6,8 @@
 const pecas = {
   menu: { arquivo: "nerdzone-logotipo-horizontal-roxo-verde-agua-fundo-escuro-174", largura: 174, altura: 41 },
   rodape: { arquivo: "nerdzone-logotipo-horizontal-roxo-verde-agua-fundo-escuro-226", largura: 226, altura: 53 },
+  // Endosso nas páginas da iniciativa: o verde-água é o tom da NerdZone junto da CoRe
+  endosso: { arquivo: "nerdzone-logotipo-horizontal-verde-agua-fundo-escuro-162", largura: 162, altura: 39 },
 } as const
 
 type UsoLogotipo = keyof typeof pecas

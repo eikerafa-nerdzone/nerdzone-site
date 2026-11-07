@@ -244,8 +244,8 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
               alt={`${iniciativa.nome}, ${iniciativa.descritor}`}
               width={iniciativa.logotipo.largura}
               height={iniciativa.logotipo.altura}
-              sizes="(max-width: 640px) 80vw, 260px"
-              className="h-auto w-4/5 max-w-[16.25rem] sm:w-[16.25rem]"
+              sizes="260px"
+              className="h-auto w-full max-w-[16.25rem]"
             />
             <div>
               <h2 id="resumo-iniciativa-titulo" className="text-xl font-semibold text-cr-nevoa">

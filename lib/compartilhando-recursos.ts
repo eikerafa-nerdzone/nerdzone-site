@@ -124,7 +124,7 @@ export const programaFormacao2025: Evento = {
   ],
   praticas: { periodo: { inicio: "2025-09-01", fim: "2025-10-04" }, horas: 10 },
   local: { espaco: "WeWork", endereco: "Avenida Paulista, 1374", cidade: "São Paulo/SP" },
-  modalidade: "Híbrida (presencial com acompanhamento online)",
+  modalidade: "Híbrida (presencial, com acompanhamento online)",
   plataforma: { nome: "Microsoft Teams", ferramentas: ["Azure DevOps", "VS Code", "Visual Studio"] },
   mentor: "Erick Prado",
   parceria: "Estação Hack",

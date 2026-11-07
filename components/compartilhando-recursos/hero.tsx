@@ -36,7 +36,7 @@ export function Hero() {
         </div>
 
         <div className="relative order-1 mx-auto w-[min(62vw,24rem)] lg:order-2 lg:w-full lg:max-w-md">
-          <Aneis className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[400%] max-w-none -translate-x-1/2 -translate-y-1/2 text-cr-linha" />
+          <Aneis className="pointer-events-none absolute left-1/2 top-1/2 -z-10 aspect-square w-[400%] max-w-none -translate-x-1/2 -translate-y-1/2 text-cr-linha" />
           <Image
             src={simboloDigitalLuz.src}
             alt="Símbolo da iniciativa: seis pessoas em círculo, voltadas para um centro que brilha"

@@ -1,4 +1,4 @@
-# Design System — Nerdzone
+# Design System NerdZone
 
 Referência da identidade visual aplicada no site. Estilo **dark premium**: glow sutil, elementos de código, UI limpa e cards com borda suave. Todos os tokens vivem em [`app/globals.css`](../app/globals.css).
 
@@ -51,10 +51,24 @@ Gradientes temáticos das páginas de produto: `.gradient-bg-purple`, `.gradient
 
 Todos os headings (`h1`–`h6`) herdam Space Grotesk via regra base. Para títulos que não são heading semântico (ex.: wordmark do navbar), use `font-display`.
 
-## Logo e monograma
+## Logotipo e ícones
 
-- **Logo principal (horizontal):** [`public/brand/logo-nerdzone.png`](../public/brand/logo-nerdzone.png) — navbar, footer, og:image.
-- **Monograma (compacto):** [`public/brand/monograma-nerdzone.png`](../public/brand/monograma-nerdzone.png) — base do favicon e do apple-icon (gerados em `app/icon.ico` e `app/apple-icon.png`; `/favicon.ico` é reescrito para o mesmo ícone).
+Peças do kit oficial da marca, sem redesenho. A marca se escreve **NerdZone**, com Z maiúsculo; a razão social continua em maiúsculas.
+
+| Peça | Arquivo | Uso |
+|---|---|---|
+| Logotipo horizontal roxo + verde-água, 174 px (1x e @2x) | [`public/brand/nerdzone-logotipo-horizontal-roxo-verde-agua-fundo-escuro-174.png`](../public/brand/nerdzone-logotipo-horizontal-roxo-verde-agua-fundo-escuro-174.png) | Menu |
+| Logotipo horizontal roxo + verde-água, 226 px (1x e @2x) | [`public/brand/nerdzone-logotipo-horizontal-roxo-verde-agua-fundo-escuro-226.png`](../public/brand/nerdzone-logotipo-horizontal-roxo-verde-agua-fundo-escuro-226.png) | Rodapé da home |
+| Logotipo horizontal verde-água, 162 px (1x e @2x) | [`public/brand/nerdzone-logotipo-horizontal-verde-agua-fundo-escuro-162.png`](../public/brand/nerdzone-logotipo-horizontal-verde-agua-fundo-escuro-162.png) | Endosso no rodapé das páginas da iniciativa Compartilhando Recursos |
+| Favicon roxo + verde-água, 32 e 48 px | [`app/icon.ico`](../app/icon.ico) | Aba do navegador; `/favicon.ico` é reescrito para o mesmo arquivo |
+| Ícone limpo roxo + verde-água sobre `#19242f`, 180 px | [`app/apple-icon.png`](../app/apple-icon.png) | Tela inicial do iOS |
+| Imagem de compartilhamento, 1200 x 630 | [`app/opengraph-image.tsx`](../app/opengraph-image.tsx) | `og:image` e `twitter:image` do site, com o logotipo do menu em 2x |
+
+- Os logotipos vêm do arquivo do kit transparente para fundo escuro (1856 x 600), recortados na tinta e exportados em 1x e @2x. O componente [`LogotipoNerdZone`](../components/layout/logotipo-nerdzone.tsx) entrega os dois pelo `srcset`.
+- Área de proteção: `x = H/4` em volta da tinta, com `H` a altura visível do NZ (cerca de 39 px no menu, 50 px no rodapé e 36 px no endosso). Quem usa o logotipo deixa esse espaço livre.
+- Mínimos do kit: logotipo horizontal com 160 px de largura ou mais; ícone a partir de 48 px; favicon a partir de 32 px (16 e 24 px não são recomendados para o NZ facetado).
+- Tons: o site e a moldura do site (menu, rodapé, favicon e imagem de compartilhamento) usam roxo + verde-água; nas páginas da iniciativa, a NerdZone aparece como endosso em verde-água. Uma variante por assinatura, sem misturar tons na mesma assinatura.
+- `public/brand/logo-nerdzone.png` e `public/brand/monograma-nerdzone.png` são da marca anterior e não são mais usados pelo site.
 
 ## Mascote
 

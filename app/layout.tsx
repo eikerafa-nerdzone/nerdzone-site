@@ -1,24 +1,31 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 import { Navbar } from "@/components/layout/navbar"
 import { WhatsAppButton } from "@/components/layout/whatsapp-button"
 import { siteConfig } from "@/lib/constants"
 
-const geistSans = Geist({
+/*
+ * Arquivos das fontes em ./fonts (recorte latino do Google Fonts; licenças OFL na mesma pasta),
+ * para o build não depender do Google Fonts: até o Next 16.4.2 algumas respostas dele quebram o
+ * next/font/google (vercel/next.js#99114, corrigido na 16.4.3).
+ */
+const geistSans = localFont({
+  src: "./fonts/geist-latin.woff2",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
 })
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "./fonts/geist-mono-latin.woff2",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
 })
 
-const spaceGrotesk = Space_Grotesk({
+const spaceGrotesk = localFont({
+  src: "./fonts/space-grotesk-latin.woff2",
   variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: "600 700",
 })
 
 export const metadata: Metadata = {

@@ -11,7 +11,10 @@ export function Validar() {
       <div className="container-brand grid gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
           <CabecalhoSecao id="validar" rotulo="Verificação" titulo="Validar um documento">
-            <p>Digite o código que consta no documento emitido para conferir o nome do titular, o evento e a data.</p>
+            <p>
+              Digite o código que consta no documento emitido para conferir o nome do titular, o evento, a data e o
+              local.
+            </p>
           </CabecalhoSecao>
           <div className="mt-8">
             <ValidarCodigoForm />
@@ -31,7 +34,7 @@ export function Validar() {
           <div className="mt-5 space-y-4 leading-relaxed text-cr-bruma">
             <p>
               Cada documento emitido traz um código único e um QR Code. Ao ler o QR Code com a câmera do celular, você
-              chega direto à página que confirma o nome do titular, o evento e a data, sem digitar nada.
+              chega direto à página que confirma o nome do titular, o evento, a data e o local, sem digitar nada.
             </p>
             <p>Compare esses dados com os do documento em mãos.</p>
             <p>

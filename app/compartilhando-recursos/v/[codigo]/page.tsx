@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import type { ReactNode } from "react"
+import { Fragment } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -11,13 +11,14 @@ import {
   emissor,
   formatarCargaHoraria,
   formatarData,
-  formatarEntre,
-  formatarLocal,
+  formatarLista,
   formatarPeriodo,
+  formatarPeriodoCompacto,
   iniciativa,
   periodoRealizacao,
   rotaIniciativa,
   validadorGovBr,
+  type DocumentoEmitido,
 } from "@/lib/compartilhando-recursos"
 import { cn } from "@/lib/utils"
 
@@ -57,34 +58,93 @@ export const metadata: Metadata = {
 
 const linkTexto = "text-cr-nevoa underline underline-offset-4 hover:text-cr-bruma"
 
-function CampoDestaque({
-  rotulo,
-  apoio,
-  tamanho,
-  children,
-}: {
-  rotulo: string
-  apoio?: string
-  tamanho: string
-  children: ReactNode
-}) {
-  return (
-    <div className="p-5 sm:p-8">
-      <dt className="font-mono text-sm font-semibold uppercase tracking-widest text-cr-bruma">{rotulo}</dt>
-      <dd className="mt-3">
-        <span className={cn("block font-semibold leading-snug text-cr-nevoa", tamanho)}>{children}</span>
-        {apoio && <span className="mt-2 block text-lg text-cr-bruma">{apoio}</span>}
-      </dd>
-    </div>
-  )
+type SubItem = { rotulo: string; valores: string[] }
+
+type Secao = {
+  id: string
+  titulo: string
+  /** Valor em destaque logo abaixo do título da seção (o nome do titular). */
+  destaque?: string
+  itens: SubItem[]
 }
 
-function Detalhe({ rotulo, children }: { rotulo: string; children: ReactNode }) {
+/** As quatro seções do cartão, na ordem em que os dados aparecem no documento. */
+function secoesDoDocumento(documento: DocumentoEmitido): Secao[] {
+  const { evento } = documento
+  return [
+    {
+      id: "nome",
+      titulo: "Nome",
+      destaque: documento.titular,
+      itens: [
+        { rotulo: "Função", valores: [documento.funcao] },
+        { rotulo: "Documento", valores: [documento.tipo] },
+        { rotulo: "Carga horária", valores: documento.cargaHoraria.map(formatarCargaHoraria) },
+      ],
+    },
+    {
+      id: "evento",
+      titulo: "Evento",
+      itens: [
+        { rotulo: "Programa", valores: [evento.programa] },
+        { rotulo: "Edição", valores: [String(evento.edicao)] },
+        { rotulo: "Iniciativa", valores: [`${iniciativa.nome} (${iniciativa.organizacao})`] },
+        { rotulo: "Formatos", valores: [formatarLista(evento.formatos)] },
+      ],
+    },
+    {
+      id: "data",
+      titulo: "Data",
+      itens: [
+        { rotulo: "Realização", valores: [formatarPeriodo(periodoRealizacao(evento))] },
+        ...evento.blocos.map((bloco) => ({ rotulo: bloco.nome, valores: [formatarPeriodoCompacto(bloco.periodo)] })),
+        { rotulo: "Emitido em", valores: [formatarData(documento.emissao)] },
+      ],
+    },
+    {
+      id: "local",
+      titulo: "Local",
+      itens: [
+        { rotulo: "Espaço", valores: [evento.local.espaco] },
+        { rotulo: "Endereço", valores: [evento.local.endereco] },
+        { rotulo: "Cidade", valores: [evento.local.cidade] },
+        { rotulo: "Modalidade", valores: [evento.modalidade] },
+      ],
+    },
+  ]
+}
+
+const classeRotulo = "font-mono text-xs font-semibold uppercase tracking-[0.14em] text-cr-bruma"
+
+function SecaoDoCartao({ secao }: { secao: Secao }) {
+  const idTitulo = `secao-${secao.id}`
   return (
-    <div className="py-4 sm:grid sm:grid-cols-[14rem_1fr] sm:gap-6">
-      <dt className="text-sm text-cr-bruma">{rotulo}</dt>
-      <dd className="mt-1 text-cr-nevoa sm:mt-0">{children}</dd>
-    </div>
+    <section aria-labelledby={idTitulo} className="px-6 py-8 sm:px-10 sm:py-9">
+      <h2
+        id={idTitulo}
+        className="flex items-center gap-2.5 font-mono text-sm font-semibold uppercase tracking-[0.2em] text-cr-nevoa"
+      >
+        <span className="size-1.5 flex-none rounded-full bg-cr-neon" aria-hidden="true" />
+        {secao.titulo}
+      </h2>
+      {secao.destaque && (
+        <p className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-cr-nevoa sm:text-4xl">
+          {secao.destaque}
+        </p>
+      )}
+      <dl className={cn("space-y-4 sm:space-y-3", secao.destaque ? "mt-6" : "mt-5")}>
+        {secao.itens.map((item) => (
+          <div key={item.rotulo} className="sm:grid sm:grid-cols-[9.5rem_1fr] sm:items-baseline sm:gap-x-6">
+            <dt className={classeRotulo}>{item.rotulo}</dt>
+            {item.valores.map((valor) => (
+              <dd key={valor} className="mt-1 text-base leading-snug text-cr-nevoa sm:col-start-2 sm:mt-0 sm:text-lg">
+                {valor}
+              </dd>
+            ))}
+          </div>
+        ))}
+      </dl>
+    </section>
   )
 }
 
@@ -92,7 +152,7 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
   const { codigo } = await params
   const documento = buscarDocumento(codigo)
   if (!documento) notFound()
-  const { evento } = documento
+  const secoes = secoesDoDocumento(documento)
 
   return (
     <div className="pt-24 pb-20 sm:pt-32 sm:pb-24">
@@ -104,36 +164,29 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
           </Link>
 
           <article aria-labelledby="validacao-titulo" className={cn(classeCartao, "mt-6 overflow-hidden")}>
-            <header className="flex items-center gap-4 border-b border-cr-linha p-5 sm:gap-5 sm:p-8">
+            <header className="flex items-center gap-4 border-b border-cr-linha px-6 py-7 sm:gap-6 sm:px-10 sm:py-9">
               <span
-                className="flex size-14 flex-none items-center justify-center rounded-full bg-cr-neon text-cr-noite sm:size-16"
+                className="flex size-14 flex-none items-center justify-center rounded-full bg-cr-neon text-cr-noite ring-8 ring-cr-neon/10 sm:size-16"
                 aria-hidden="true"
               >
-                <Check size={32} strokeWidth={3} />
+                <Check size={30} strokeWidth={3} />
               </span>
               <div>
-                <h1 id="validacao-titulo" className="text-3xl font-semibold leading-tight text-cr-nevoa sm:text-4xl">
+                <h1 id="validacao-titulo" className="text-2xl font-semibold leading-tight text-cr-nevoa sm:text-4xl">
                   Documento válido
                 </h1>
-                <p className="mt-1 text-cr-bruma">{documento.tipo}</p>
+                <p className="mt-1.5 font-mono text-sm text-cr-bruma">
+                  Código <span className="tracking-wider text-cr-nevoa">{documento.codigo}</span>
+                </p>
               </div>
             </header>
 
-            <dl className="divide-y divide-cr-linha">
-              <CampoDestaque rotulo="Nome" apoio={documento.funcao} tamanho="text-3xl sm:text-4xl">
-                {documento.titular}
-              </CampoDestaque>
-              <CampoDestaque rotulo="Evento" tamanho="text-[1.375rem] sm:text-3xl">
-                {evento.programa}, edição {evento.edicao}, da iniciativa {iniciativa.nome}
-              </CampoDestaque>
-              <CampoDestaque
-                rotulo="Data"
-                apoio={`Emitido em ${formatarData(documento.emissao)}`}
-                tamanho="text-3xl sm:text-4xl"
-              >
-                {formatarPeriodo(periodoRealizacao(evento))}
-              </CampoDestaque>
-            </dl>
+            {secoes.map((secao, indice) => (
+              <Fragment key={secao.id}>
+                {indice > 0 && <div className="mx-6 h-px bg-cr-neon/80 sm:mx-10" aria-hidden="true" />}
+                <SecaoDoCartao secao={secao} />
+              </Fragment>
+            ))}
           </article>
 
           <section aria-labelledby="como-conferir-titulo" className="mt-12">
@@ -141,7 +194,7 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
               Como conferir
             </h2>
             <ol className="mt-5 list-decimal space-y-3 pl-6 text-lg leading-relaxed text-cr-bruma marker:font-semibold marker:text-cr-nevoa">
-              <li>Compare o nome, o evento e a data acima com os que constam no documento em mãos.</li>
+              <li>Compare o nome, o evento, a data e o local acima com os que constam no documento em mãos.</li>
               <li>O código é único e identifica somente este documento.</li>
               <li>
                 O PDF original é assinado digitalmente e pode ser conferido gratuitamente em{" "}
@@ -162,38 +215,19 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
             </ol>
           </section>
 
-          <section aria-labelledby="detalhes-titulo" className="mt-12">
-            <h2 id="detalhes-titulo" className="text-2xl font-semibold text-cr-nevoa">
-              Detalhes do documento
+          <section aria-labelledby="emissor-titulo" className="mt-12">
+            <h2 id="emissor-titulo" className="text-2xl font-semibold text-cr-nevoa">
+              Emissor
             </h2>
-            <dl className="mt-5 divide-y divide-cr-linha border-y border-cr-linha">
-              <Detalhe rotulo="Código">
-                <span className="font-mono text-lg tracking-wider">{documento.codigo}</span>
-              </Detalhe>
-              <Detalhe rotulo="Carga horária">
-                {documento.cargaHoraria.map((carga) => (
-                  <span key={formatarCargaHoraria(carga)} className="block">
-                    {formatarCargaHoraria(carga)}
-                  </span>
-                ))}
-              </Detalhe>
-              <Detalhe rotulo="Períodos">
-                <ul className="space-y-1">
-                  {evento.blocos.map((bloco) => (
-                    <li key={bloco.nome}>
-                      {bloco.nome}: {formatarPeriodo(bloco.periodo)}, {bloco.horasEncontros} h de encontros
-                    </li>
-                  ))}
-                  <li>
-                    Práticas dos participantes: {evento.praticas.horas} h {formatarEntre(evento.praticas.periodo)}
-                  </li>
-                </ul>
-              </Detalhe>
-              <Detalhe rotulo="Local">{formatarLocal(evento.local)}</Detalhe>
-              <Detalhe rotulo="Emissor">
-                {emissor.razaoSocial}
-                <span className="block text-cr-bruma">CNPJ {emissor.cnpj}</span>
-              </Detalhe>
+            <dl className="mt-5 space-y-4 border-y border-cr-linha py-5 sm:space-y-3">
+              <div className="sm:grid sm:grid-cols-[9.5rem_1fr] sm:items-baseline sm:gap-x-6">
+                <dt className={classeRotulo}>Razão social</dt>
+                <dd className="mt-1 text-cr-nevoa sm:mt-0">{emissor.razaoSocial}</dd>
+              </div>
+              <div className="sm:grid sm:grid-cols-[9.5rem_1fr] sm:items-baseline sm:gap-x-6">
+                <dt className={classeRotulo}>CNPJ</dt>
+                <dd className="mt-1 text-cr-nevoa sm:mt-0">{emissor.cnpj}</dd>
+              </div>
             </dl>
           </section>
 

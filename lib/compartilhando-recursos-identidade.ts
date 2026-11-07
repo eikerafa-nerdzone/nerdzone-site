@@ -12,6 +12,13 @@ export const simboloDigitalLuz = {
   altura: 200,
 }
 
+/** Símbolo reduzido (seis cabeças e núcleo), para 16 a 32 px: cabeçalhos pequenos, ao lado de "CoRe" em texto. */
+export const simboloReduzido = {
+  src: `${rotaIniciativa}/compartilhando-recursos-simbolo-reduzido-escuro.svg`,
+  largura: 200,
+  altura: 200,
+}
+
 /** Favicon a partir do símbolo reduzido, sobre a base azul-noite. */
 export const faviconIniciativa = {
   ico: `${rotaIniciativa}/compartilhando-recursos-favicon.ico`,

@@ -3,15 +3,21 @@ import { CalendarDays, ShieldCheck } from "lucide-react"
 import { Aneis } from "@/components/compartilhando-recursos/aneis"
 import { classeBotao } from "@/components/compartilhando-recursos/estilos"
 import { iniciativa } from "@/lib/compartilhando-recursos"
-import { simboloDigitalLuz } from "@/lib/compartilhando-recursos-identidade"
+import { simboloDigitalLuz, simboloReduzido } from "@/lib/compartilhando-recursos-identidade"
 
 export function Hero() {
   return (
     <section aria-labelledby="hero-titulo" className="relative isolate overflow-hidden pt-24 pb-20 sm:pt-36 sm:pb-28">
       <div className="container-brand grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
         <div className="order-2 lg:order-1">
-          <p className="inline-flex items-center gap-2.5 rounded-full border border-cr-linha px-4 py-1.5 font-mono text-sm font-semibold text-cr-bruma">
-            <span className="size-2 rounded-full bg-cr-neon" aria-hidden="true" />
+          <p className="inline-flex h-8 items-center gap-2 rounded-full border border-cr-linha pl-1 pr-3.5 font-[650] text-cr-nevoa">
+            <Image
+              src={simboloReduzido.src}
+              alt=""
+              width={simboloReduzido.largura}
+              height={simboloReduzido.altura}
+              className="size-6"
+            />
             {iniciativa.sigla}
           </p>
           <h1

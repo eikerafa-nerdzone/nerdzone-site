@@ -108,7 +108,7 @@ export type Evento = {
   materiais: Material[]
 }
 
-const programaFormacao2025: Evento = {
+export const programaFormacao2025: Evento = {
   id: "2025",
   programa: "Programa de Formação em Tecnologia",
   edicao: 2025,
@@ -180,65 +180,6 @@ export const emissor = {
 
 export const validadorGovBr = "https://validar.iti.gov.br"
 
-export type CargaHoraria = {
-  horas: number
-  /** Complemento depois das horas, como "do programa". */
-  complemento?: string
-}
-
-export type DocumentoEmitido = {
-  /** Código único no formato canônico (XXXX-XXXX-XXXX). */
-  codigo: string
-  tipo: string
-  /** Nome completo do titular. */
-  titular: string
-  funcao: string
-  evento: Evento
-  emissao: string
-  /** Linhas da carga horária, na ordem em que aparecem no documento. */
-  cargaHoraria: CargaHoraria[]
-}
-
-const dataEmissao = "2026-11-06"
-
-function declaracaoDeInstrutor(codigo: string, titular: string, evento: Evento): DocumentoEmitido {
-  return {
-    codigo,
-    tipo: "Declaração de atuação como mentor e instrutor",
-    titular,
-    funcao: "Mentor e instrutor",
-    evento,
-    emissao: dataEmissao,
-    cargaHoraria: [
-      { horas: horasDeEncontros(evento), complemento: "ministradas (encontros)" },
-      { horas: cargaHorariaPrograma(evento), complemento: "do programa" },
-    ],
-  }
-}
-
-function certificadoDeParticipacao(codigo: string, titular: string, evento: Evento): DocumentoEmitido {
-  return {
-    codigo,
-    tipo: "Certificado de participação",
-    titular,
-    funcao: "Participante",
-    evento,
-    emissao: dataEmissao,
-    cargaHoraria: [{ horas: cargaHorariaPrograma(evento) }],
-  }
-}
-
-export const documentos: DocumentoEmitido[] = [
-  declaracaoDeInstrutor("D92E-G9HF-JYSP", "Erick Rafael Prado", programaFormacao2025),
-  certificadoDeParticipacao("N3PG-SR5Q-V7DW", "Caroline Monteiro de Souza", programaFormacao2025),
-  certificadoDeParticipacao("3ZR9-HU9T-S3NK", "Elizabeth Monteiro de Souza", programaFormacao2025),
-  certificadoDeParticipacao("W38R-2JH3-KFZW", "Marciel Bonette", programaFormacao2025),
-]
-
-export function buscarDocumento(codigo: string): DocumentoEmitido | undefined {
-  return documentos.find((documento) => documento.codigo === codigo)
-}
-
 /** "2025-09-01" vira "01/09/2025", sem passar por fuso horário. */
 export function formatarData(iso: string): string {
   const [ano, mes, dia] = iso.split("-")
@@ -277,8 +218,4 @@ export function formatarLocal({ espaco, endereco, cidade }: Local): string {
 export function formatarPlataforma({ nome, ferramentas }: Evento["plataforma"]): string {
   const lista = new Intl.ListFormat("pt-BR", { style: "long", type: "conjunction" }).format(ferramentas)
   return `${nome} (com ${lista})`
-}
-
-export function formatarCargaHoraria({ horas, complemento }: CargaHoraria): string {
-  return complemento ? `${horas} h ${complemento}` : `${horas} h`
 }

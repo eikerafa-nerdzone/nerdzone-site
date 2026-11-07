@@ -6,10 +6,7 @@ import { notFound } from "next/navigation"
 import { ArrowLeft, ArrowRight, Check, ExternalLink } from "lucide-react"
 import { classeBotao, classeCartao } from "@/components/compartilhando-recursos/estilos"
 import {
-  buscarDocumento,
-  documentos,
   emissor,
-  formatarCargaHoraria,
   formatarData,
   formatarLista,
   formatarPeriodo,
@@ -18,8 +15,13 @@ import {
   periodoRealizacao,
   rotaIniciativa,
   validadorGovBr,
-  type DocumentoEmitido,
 } from "@/lib/compartilhando-recursos"
+import {
+  buscarDocumento,
+  documentos,
+  formatarCargaHoraria,
+  type DocumentoEmitido,
+} from "@/lib/compartilhando-recursos-documentos"
 import { cn } from "@/lib/utils"
 
 export const dynamicParams = false

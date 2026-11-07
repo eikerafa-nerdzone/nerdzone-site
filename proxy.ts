@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 import { normalizarCodigo } from "@/lib/codigo-documento"
-import { buscarDocumento, rotaCodigoNaoEncontrado, rotaValidacao } from "@/lib/compartilhando-recursos"
+import { rotaCodigoNaoEncontrado, rotaValidacao } from "@/lib/compartilhando-recursos"
+import { buscarDocumento } from "@/lib/compartilhando-recursos-documentos"
 
 /**
  * A página de validação é estática e existe só para os códigos emitidos, no

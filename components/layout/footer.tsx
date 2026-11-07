@@ -8,6 +8,7 @@ import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { siteConfig, navLinks } from "@/lib/constants"
+import { iniciativa, rotaIniciativa } from "@/lib/compartilhando-recursos"
 import { contactSchema, type ContactFormData } from "@/lib/validations"
 import { Button } from "@/components/ui/button"
 
@@ -306,6 +307,21 @@ export function Footer() {
                       className="text-gray-400 hover:text-brand-teal text-sm transition-colors"
                     >
                       Outsourcing
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Initiatives */}
+              <div className="mt-8">
+                <p className="text-gray-500 text-xs uppercase tracking-widest mb-4">Iniciativas</p>
+                <ul className="grid grid-cols-2 gap-2">
+                  <li>
+                    <Link
+                      href={rotaIniciativa}
+                      className="text-gray-400 hover:text-brand-teal text-sm transition-colors"
+                    >
+                      {iniciativa.nome}
                     </Link>
                   </li>
                 </ul>

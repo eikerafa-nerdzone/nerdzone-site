@@ -4,6 +4,11 @@ export const rotaIniciativa = "/compartilhando-recursos"
 export const rotaValidacao = `${rotaIniciativa}/v`
 export const rotaCodigoNaoEncontrado = `${rotaIniciativa}/codigo-nao-encontrado`
 
+export const codigoNaoEncontrado = {
+  titulo: "Código não encontrado",
+  descricao: "Nenhum documento emitido pela iniciativa corresponde a este código.",
+}
+
 export const iniciativa = {
   nome: "Compartilhando Recursos",
   sigla: "CoRe",

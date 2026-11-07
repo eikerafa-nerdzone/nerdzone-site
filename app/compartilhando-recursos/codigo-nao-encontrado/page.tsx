@@ -1,9 +1,14 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
+import { codigoNaoEncontrado } from "@/lib/compartilhando-recursos"
 
-/** O título fica na página (e não só no not-found) para valer também depois da hidratação. */
+/**
+ * Também declarado no not-found: o HTML do 404 usa os metadados do not-found e,
+ * depois da hidratação, o cliente usa os desta página.
+ */
 export const metadata: Metadata = {
-  title: "Código não encontrado",
+  title: codigoNaoEncontrado.titulo,
+  description: codigoNaoEncontrado.descricao,
 }
 
 /**

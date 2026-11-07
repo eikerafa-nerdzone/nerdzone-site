@@ -1,8 +1,14 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { SearchX, ShieldCheck } from "lucide-react"
 import { classeBotao, classeCartao } from "@/components/compartilhando-recursos/estilos"
-import { rotaIniciativa } from "@/lib/compartilhando-recursos"
+import { codigoNaoEncontrado, rotaIniciativa } from "@/lib/compartilhando-recursos"
 import { cn } from "@/lib/utils"
+
+export const metadata: Metadata = {
+  title: codigoNaoEncontrado.titulo,
+  description: codigoNaoEncontrado.descricao,
+}
 
 export default function CodigoNaoEncontrado() {
   return (
@@ -16,11 +22,9 @@ export default function CodigoNaoEncontrado() {
             <SearchX size={28} />
           </span>
           <h1 id="nao-encontrado-titulo" className="mt-6 text-3xl font-semibold leading-tight text-cr-nevoa sm:text-4xl">
-            Código não encontrado
+            {codigoNaoEncontrado.titulo}
           </h1>
-          <p className="mt-3 text-lg leading-relaxed text-cr-bruma">
-            Nenhum documento emitido pela iniciativa corresponde a este código.
-          </p>
+          <p className="mt-3 text-lg leading-relaxed text-cr-bruma">{codigoNaoEncontrado.descricao}</p>
 
           <div className="mt-8 rounded-xl border border-cr-linha bg-cr-noite p-5 sm:p-6">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-cr-bruma">Confira o código</p>

@@ -23,7 +23,7 @@ const leituras = [
   },
   {
     titulo: "Honra e glória como luz",
-    texto: "O halo em volta do núcleo é a luz que o centro espalha sobre quem está em volta.",
+    texto: "O núcleo neon é a luz que o centro espalha sobre quem está em volta.",
     icone: Sparkles,
   },
 ]

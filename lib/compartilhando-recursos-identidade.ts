@@ -5,6 +5,13 @@ import { iniciativa, rotaIniciativa } from "@/lib/compartilhando-recursos"
  * estão em `iniciativa`. Os arquivos ficam em public/compartilhando-recursos.
  */
 
+/** Símbolo com a luz do núcleo: só em tela escura e a partir de cerca de 64 px. */
+export const simboloDigitalLuz = {
+  src: `${rotaIniciativa}/compartilhando-recursos-simbolo-digital-luz-escuro.svg`,
+  largura: 200,
+  altura: 200,
+}
+
 /** Favicon a partir do símbolo reduzido, sobre a base azul-noite. */
 export const faviconIniciativa = {
   ico: `${rotaIniciativa}/compartilhando-recursos-favicon.ico`,

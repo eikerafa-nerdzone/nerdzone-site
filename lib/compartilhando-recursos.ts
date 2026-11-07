@@ -2,6 +2,7 @@ import { siteConfig } from "@/lib/constants"
 
 export const rotaIniciativa = "/compartilhando-recursos"
 export const rotaValidacao = `${rotaIniciativa}/v`
+export const rotaCodigoNaoEncontrado = `${rotaIniciativa}/codigo-nao-encontrado`
 
 export const iniciativa = {
   nome: "Compartilhando Recursos",

@@ -8,14 +8,13 @@ export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
 /** Logotipo do kit no 2x do menu, exibido em tamanho real. */
-const logotipo = {
-  arquivo: "public/brand/nerdzone-logotipo-horizontal-roxo-verde-agua-fundo-escuro-174@2x.png",
-  largura: 348,
-  altura: 82,
-}
+const logotipo = { largura: 348, altura: 82 }
 
 export default async function Image() {
-  const logotipoBase64 = await readFile(join(process.cwd(), logotipo.arquivo), "base64")
+  const logotipoBase64 = await readFile(
+    join(process.cwd(), "public/brand/nerdzone-logotipo-horizontal-roxo-verde-agua-fundo-escuro-174@2x.png"),
+    "base64",
+  )
 
   return new ImageResponse(
     (

@@ -31,7 +31,7 @@ export type DocumentoEmitido = {
   cargaHoraria: CargaHoraria[]
 }
 
-const dataEmissao = "2026-11-06"
+const dataEmissao = "2026-11-07"
 
 function declaracaoDeInstrutor(codigo: string, titular: string, evento: Evento): DocumentoEmitido {
   return {

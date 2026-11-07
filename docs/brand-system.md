@@ -54,7 +54,7 @@ Todos os headings (`h1`–`h6`) herdam Space Grotesk via regra base. Para títul
 ## Logo e monograma
 
 - **Logo principal (horizontal):** [`public/brand/logo-nerdzone.png`](../public/brand/logo-nerdzone.png) — navbar, footer, og:image.
-- **Monograma (compacto):** [`public/brand/monograma-nerdzone.png`](../public/brand/monograma-nerdzone.png) — base do favicon e do apple-icon (gerados em `app/favicon.ico` e `app/apple-icon.png`).
+- **Monograma (compacto):** [`public/brand/monograma-nerdzone.png`](../public/brand/monograma-nerdzone.png) — base do favicon e do apple-icon (gerados em `app/icon.ico` e `app/apple-icon.png`; `/favicon.ico` é reescrito para o mesmo ícone).
 
 ## Mascote
 

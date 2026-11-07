@@ -1,14 +1,17 @@
 import type { Metadata } from "next"
 import { Rodape } from "@/components/compartilhando-recursos/rodape"
-import { iniciativa } from "@/lib/compartilhando-recursos"
+import { faviconIniciativa } from "@/lib/compartilhando-recursos-identidade"
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
   icons: {
     icon: [
-      { url: iniciativa.favicon.svg, type: "image/svg+xml" },
-      { url: iniciativa.favicon.png, type: "image/png", sizes: "512x512" },
+      { url: faviconIniciativa.ico, type: "image/x-icon", sizes: "16x16 32x32 48x48" },
+      { url: faviconIniciativa.svg, type: "image/svg+xml" },
+      { url: faviconIniciativa.png32, type: "image/png", sizes: "32x32" },
+      { url: faviconIniciativa.png512, type: "image/png", sizes: "512x512" },
     ],
+    apple: [{ url: faviconIniciativa.png180, type: "image/png", sizes: "180x180" }],
   },
 }
 

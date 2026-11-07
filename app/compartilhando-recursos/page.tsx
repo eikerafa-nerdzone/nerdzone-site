@@ -9,7 +9,7 @@ import { Validar } from "@/components/compartilhando-recursos/validar"
 import { iniciativa, rotaIniciativa } from "@/lib/compartilhando-recursos"
 
 const tituloOg = `${iniciativa.nome} | ${iniciativa.descritor}`
-const descricao = `${iniciativa.descritor}. Conheça a iniciativa e os eventos, baixe os materiais e valide os documentos emitidos.`
+const descricao = `${iniciativa.descritor}. Conheça a iniciativa e os eventos e valide os documentos emitidos.`
 
 export const metadata: Metadata = {
   title: iniciativa.nome,

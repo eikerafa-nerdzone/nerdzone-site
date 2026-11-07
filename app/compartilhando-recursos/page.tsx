@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Edicao2025 } from "@/components/compartilhando-recursos/edicao-2025"
 import { Hero } from "@/components/compartilhando-recursos/hero"
 import { NossaOrigem } from "@/components/compartilhando-recursos/nossa-origem"
 import { OQueE } from "@/components/compartilhando-recursos/o-que-e"
@@ -40,6 +41,7 @@ export default function IniciativaPage() {
       <Hero temMateriais={false} />
       <OQueE />
       <NossaOrigem />
+      <Edicao2025 />
     </>
   )
 }

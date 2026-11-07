@@ -7,8 +7,9 @@ import { buscarDocumento } from "@/lib/compartilhando-recursos-documentos"
 /**
  * A página de validação é estática e existe só para os códigos emitidos, no
  * formato canônico (XXXX-XXXX-XXXX). Aqui o código digitado em outra caixa, sem
- * hifens ou com espaços é redirecionado para o canônico, e o código que não foi
- * emitido mostra a página "não encontrado" da iniciativa, com status 404.
+ * hifens ou com espaços é redirecionado para o canônico. O código que não foi
+ * emitido vai para um caminho sem página, e o roteador responde 404 com a página
+ * "não encontrada" do site, renderizada no servidor.
  */
 export function proxy(request: NextRequest) {
   const segmento = request.nextUrl.pathname.split("/").pop() ?? ""

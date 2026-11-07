@@ -40,7 +40,7 @@ export function Hero({ temMateriais }: { temMateriais: boolean }) {
           <Aneis className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[400%] max-w-none -translate-x-1/2 -translate-y-1/2 text-cr-linha" />
           <Image
             src={iniciativa.simbolo.src}
-            alt="Símbolo da iniciativa: oito pessoas em círculo, voltadas para um centro que brilha"
+            alt="Símbolo da iniciativa: seis pessoas em círculo, voltadas para um centro que brilha"
             width={iniciativa.simbolo.largura}
             height={iniciativa.simbolo.altura}
             loading="eager"

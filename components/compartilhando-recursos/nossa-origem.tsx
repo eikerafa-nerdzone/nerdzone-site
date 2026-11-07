@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 const leituras = [
   {
     titulo: "Pessoas reunidas",
-    texto: "Oito pessoas, ombro a ombro, voltadas para o centro.",
+    texto: "Seis pessoas à mesma distância do centro, sem ninguém na frente ou acima.",
     icone: Users,
   },
   {

@@ -3,7 +3,7 @@ import { Fragment } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, ArrowRight, Check, ExternalLink } from "lucide-react"
+import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react"
 import { classeBotao, classeCartao } from "@/components/compartilhando-recursos/estilos"
 import {
   emissor,
@@ -168,12 +168,13 @@ export default async function ValidacaoDocumentoPage({ params }: { params: Promi
 
           <article aria-labelledby="validacao-titulo" className={cn(classeCartao, "mt-6 overflow-hidden")}>
             <header className="flex items-center gap-4 border-b border-cr-linha px-6 py-7 sm:gap-6 sm:px-10 sm:py-9">
-              <span
-                className="flex size-14 flex-none items-center justify-center rounded-full bg-cr-neon text-cr-noite ring-8 ring-cr-neon/10 sm:size-16"
-                aria-hidden="true"
-              >
-                <Check size={30} strokeWidth={3} />
-              </span>
+              <Image
+                src={iniciativa.simbolo.src}
+                alt=""
+                width={iniciativa.simbolo.largura}
+                height={iniciativa.simbolo.altura}
+                className="size-14 flex-none sm:size-16"
+              />
               <div>
                 <h1 id="validacao-titulo" className="text-2xl font-semibold leading-tight text-cr-nevoa sm:text-4xl">
                   Documento válido
